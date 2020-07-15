@@ -37,26 +37,26 @@ Partial Class Form1
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle10 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle11 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle12 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle13 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle14 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle15 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle16 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle17 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle18 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle19 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle20 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle101 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle102 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle103 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle104 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle105 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle106 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle107 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle108 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle109 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle110 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle111 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle112 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle113 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle114 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle115 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle116 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle117 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle118 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle119 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle120 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form1))
         Me.CMTV = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.OpenInNewTabToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -347,24 +347,28 @@ Partial Class Form1
         '
         'NewCaseToolStripMenuItem1
         '
+        Me.NewCaseToolStripMenuItem1.Image = Global.EasyNotes.My.Resources.Resources._New
         Me.NewCaseToolStripMenuItem1.Name = "NewCaseToolStripMenuItem1"
         Me.NewCaseToolStripMenuItem1.Size = New System.Drawing.Size(270, 34)
         Me.NewCaseToolStripMenuItem1.Text = "&New Case"
         '
         'NewTemplateToolStripMenuItem
         '
+        Me.NewTemplateToolStripMenuItem.Image = Global.EasyNotes.My.Resources.Resources.CreateTemplate
         Me.NewTemplateToolStripMenuItem.Name = "NewTemplateToolStripMenuItem"
         Me.NewTemplateToolStripMenuItem.Size = New System.Drawing.Size(270, 34)
         Me.NewTemplateToolStripMenuItem.Text = "New &Template"
         '
         'DeleteTemplateToolStripMenuItem
         '
+        Me.DeleteTemplateToolStripMenuItem.Image = Global.EasyNotes.My.Resources.Resources.DEleteTemplate
         Me.DeleteTemplateToolStripMenuItem.Name = "DeleteTemplateToolStripMenuItem"
         Me.DeleteTemplateToolStripMenuItem.Size = New System.Drawing.Size(270, 34)
         Me.DeleteTemplateToolStripMenuItem.Text = "&Delete Template"
         '
         'ExitToolStripMenuItem1
         '
+        Me.ExitToolStripMenuItem1.Image = Global.EasyNotes.My.Resources.Resources.close
         Me.ExitToolStripMenuItem1.Name = "ExitToolStripMenuItem1"
         Me.ExitToolStripMenuItem1.Size = New System.Drawing.Size(270, 34)
         Me.ExitToolStripMenuItem1.Text = "E&xit"
@@ -378,62 +382,72 @@ Partial Class Form1
         '
         'CopyResourceToolStripMenuItem
         '
+        Me.CopyResourceToolStripMenuItem.Image = Global.EasyNotes.My.Resources.Resources.CopyResource
         Me.CopyResourceToolStripMenuItem.Name = "CopyResourceToolStripMenuItem"
-        Me.CopyResourceToolStripMenuItem.Size = New System.Drawing.Size(248, 34)
+        Me.CopyResourceToolStripMenuItem.Size = New System.Drawing.Size(270, 34)
         Me.CopyResourceToolStripMenuItem.Text = "&Copy Resource"
         '
         'SendMailToolStripMenuItem1
         '
+        Me.SendMailToolStripMenuItem1.Image = Global.EasyNotes.My.Resources.Resources.mail
         Me.SendMailToolStripMenuItem1.Name = "SendMailToolStripMenuItem1"
-        Me.SendMailToolStripMenuItem1.Size = New System.Drawing.Size(248, 34)
+        Me.SendMailToolStripMenuItem1.Size = New System.Drawing.Size(270, 34)
         Me.SendMailToolStripMenuItem1.Text = "Send &Mail"
         '
         'RefreshToolStripMenuItem1
         '
+        Me.RefreshToolStripMenuItem1.Image = Global.EasyNotes.My.Resources.Resources.Refresh
         Me.RefreshToolStripMenuItem1.Name = "RefreshToolStripMenuItem1"
-        Me.RefreshToolStripMenuItem1.Size = New System.Drawing.Size(248, 34)
+        Me.RefreshToolStripMenuItem1.Size = New System.Drawing.Size(270, 34)
         Me.RefreshToolStripMenuItem1.Text = "Re&fresh List"
         '
         'AlertToolStripMenuItem
         '
+        Me.AlertToolStripMenuItem.Image = Global.EasyNotes.My.Resources.Resources.information
         Me.AlertToolStripMenuItem.Name = "AlertToolStripMenuItem"
-        Me.AlertToolStripMenuItem.Size = New System.Drawing.Size(248, 34)
+        Me.AlertToolStripMenuItem.Size = New System.Drawing.Size(270, 34)
         Me.AlertToolStripMenuItem.Text = "&Alert"
         '
         'SettingsToolStripMenuItem2
         '
+        Me.SettingsToolStripMenuItem2.Image = Global.EasyNotes.My.Resources.Resources.settings
         Me.SettingsToolStripMenuItem2.Name = "SettingsToolStripMenuItem2"
-        Me.SettingsToolStripMenuItem2.Size = New System.Drawing.Size(248, 34)
+        Me.SettingsToolStripMenuItem2.Size = New System.Drawing.Size(270, 34)
         Me.SettingsToolStripMenuItem2.Text = "S&ettings"
         '
         'ManageCaseToolStripMenuItem
         '
+        Me.ManageCaseToolStripMenuItem.Image = Global.EasyNotes.My.Resources.Resources.information
         Me.ManageCaseToolStripMenuItem.Name = "ManageCaseToolStripMenuItem"
-        Me.ManageCaseToolStripMenuItem.Size = New System.Drawing.Size(248, 34)
+        Me.ManageCaseToolStripMenuItem.Size = New System.Drawing.Size(270, 34)
         Me.ManageCaseToolStripMenuItem.Text = "Mana&ge Case"
         '
         'CloseTabToolStripMenuItem
         '
+        Me.CloseTabToolStripMenuItem.Image = Global.EasyNotes.My.Resources.Resources.close
         Me.CloseTabToolStripMenuItem.Name = "CloseTabToolStripMenuItem"
-        Me.CloseTabToolStripMenuItem.Size = New System.Drawing.Size(248, 34)
+        Me.CloseTabToolStripMenuItem.Size = New System.Drawing.Size(270, 34)
         Me.CloseTabToolStripMenuItem.Text = "Cl&ose Tab"
         '
         'TimerStartStopToolStripMenuItem
         '
+        Me.TimerStartStopToolStripMenuItem.Image = Global.EasyNotes.My.Resources.Resources.Watch
         Me.TimerStartStopToolStripMenuItem.Name = "TimerStartStopToolStripMenuItem"
-        Me.TimerStartStopToolStripMenuItem.Size = New System.Drawing.Size(248, 34)
+        Me.TimerStartStopToolStripMenuItem.Size = New System.Drawing.Size(270, 34)
         Me.TimerStartStopToolStripMenuItem.Text = "&Timer Start/Stop"
         '
         'DeleteCaseToolStripMenuItem
         '
+        Me.DeleteCaseToolStripMenuItem.Image = Global.EasyNotes.My.Resources.Resources.DeleteAll
         Me.DeleteCaseToolStripMenuItem.Name = "DeleteCaseToolStripMenuItem"
-        Me.DeleteCaseToolStripMenuItem.Size = New System.Drawing.Size(248, 34)
+        Me.DeleteCaseToolStripMenuItem.Size = New System.Drawing.Size(270, 34)
         Me.DeleteCaseToolStripMenuItem.Text = "&Delete Case"
         '
         'ShowHidePanelToolStripMenuItem
         '
+        Me.ShowHidePanelToolStripMenuItem.Image = Global.EasyNotes.My.Resources.Resources.ShowHide
         Me.ShowHidePanelToolStripMenuItem.Name = "ShowHidePanelToolStripMenuItem"
-        Me.ShowHidePanelToolStripMenuItem.Size = New System.Drawing.Size(248, 34)
+        Me.ShowHidePanelToolStripMenuItem.Size = New System.Drawing.Size(270, 34)
         Me.ShowHidePanelToolStripMenuItem.Text = "Show/Hide Panel"
         '
         'OpenToolStripMenuItem
@@ -442,29 +456,34 @@ Partial Class Form1
         Me.OpenToolStripMenuItem.Name = "OpenToolStripMenuItem"
         Me.OpenToolStripMenuItem.Size = New System.Drawing.Size(72, 29)
         Me.OpenToolStripMenuItem.Text = "&Open"
+        Me.OpenToolStripMenuItem.Visible = False
         '
         'CaseNotesToolStripMenuItem
         '
+        Me.CaseNotesToolStripMenuItem.Image = Global.EasyNotes.My.Resources.Resources.Download
         Me.CaseNotesToolStripMenuItem.Name = "CaseNotesToolStripMenuItem"
-        Me.CaseNotesToolStripMenuItem.Size = New System.Drawing.Size(248, 34)
+        Me.CaseNotesToolStripMenuItem.Size = New System.Drawing.Size(270, 34)
         Me.CaseNotesToolStripMenuItem.Text = "Local Case &Notes"
         '
         'OpenCaseDirectoryToolStripMenuItem
         '
+        Me.OpenCaseDirectoryToolStripMenuItem.Image = Global.EasyNotes.My.Resources.Resources.Download
         Me.OpenCaseDirectoryToolStripMenuItem.Name = "OpenCaseDirectoryToolStripMenuItem"
-        Me.OpenCaseDirectoryToolStripMenuItem.Size = New System.Drawing.Size(248, 34)
+        Me.OpenCaseDirectoryToolStripMenuItem.Size = New System.Drawing.Size(270, 34)
         Me.OpenCaseDirectoryToolStripMenuItem.Text = "&Local Share"
         '
         'TeamShareToolStripMenuItem
         '
+        Me.TeamShareToolStripMenuItem.Image = Global.EasyNotes.My.Resources.Resources.Download
         Me.TeamShareToolStripMenuItem.Name = "TeamShareToolStripMenuItem"
-        Me.TeamShareToolStripMenuItem.Size = New System.Drawing.Size(248, 34)
+        Me.TeamShareToolStripMenuItem.Size = New System.Drawing.Size(270, 34)
         Me.TeamShareToolStripMenuItem.Text = "&Team Share"
         '
         'FTPWorkspaceToolStripMenuItem
         '
+        Me.FTPWorkspaceToolStripMenuItem.Image = Global.EasyNotes.My.Resources.Resources.Download
         Me.FTPWorkspaceToolStripMenuItem.Name = "FTPWorkspaceToolStripMenuItem"
-        Me.FTPWorkspaceToolStripMenuItem.Size = New System.Drawing.Size(248, 34)
+        Me.FTPWorkspaceToolStripMenuItem.Size = New System.Drawing.Size(270, 34)
         Me.FTPWorkspaceToolStripMenuItem.Text = "&FTP Workspace"
         '
         'HelpToolStripMenuItem
@@ -497,43 +516,43 @@ Partial Class Form1
         Me.DGAlert.AllowUserToDeleteRows = False
         Me.DGAlert.AllowUserToOrderColumns = True
         Me.DGAlert.AllowUserToResizeRows = False
-        DataGridViewCellStyle1.BackColor = System.Drawing.Color.White
-        Me.DGAlert.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle101.BackColor = System.Drawing.Color.White
+        Me.DGAlert.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle101
         Me.DGAlert.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.DGAlert.BackgroundColor = System.Drawing.Color.White
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DGAlert.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle102.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle102.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle102.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle102.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle102.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle102.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle102.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DGAlert.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle102
         Me.DGAlert.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DGAlert.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Btn})
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.Maroon
-        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.DGAlert.DefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle103.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle103.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle103.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle103.ForeColor = System.Drawing.Color.Maroon
+        DataGridViewCellStyle103.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle103.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle103.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DGAlert.DefaultCellStyle = DataGridViewCellStyle103
         Me.DGAlert.Location = New System.Drawing.Point(-3, -3)
         Me.DGAlert.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.DGAlert.MultiSelect = False
         Me.DGAlert.Name = "DGAlert"
         Me.DGAlert.ReadOnly = True
-        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle4.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DGAlert.RowHeadersDefaultCellStyle = DataGridViewCellStyle4
+        DataGridViewCellStyle104.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle104.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle104.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle104.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle104.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle104.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle104.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DGAlert.RowHeadersDefaultCellStyle = DataGridViewCellStyle104
         Me.DGAlert.RowHeadersVisible = False
         Me.DGAlert.RowHeadersWidth = 62
         Me.DGAlert.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
@@ -607,42 +626,42 @@ Partial Class Form1
         Me.DGRemote.AllowUserToAddRows = False
         Me.DGRemote.AllowUserToDeleteRows = False
         Me.DGRemote.AllowUserToOrderColumns = True
-        DataGridViewCellStyle5.BackColor = System.Drawing.Color.LightBlue
-        Me.DGRemote.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle5
+        DataGridViewCellStyle105.BackColor = System.Drawing.Color.LightBlue
+        Me.DGRemote.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle105
         Me.DGRemote.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.DGRemote.BackgroundColor = System.Drawing.Color.White
-        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle6.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DGRemote.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle6
+        DataGridViewCellStyle106.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle106.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle106.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle106.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle106.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle106.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle106.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DGRemote.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle106
         Me.DGRemote.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle7.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle7.ForeColor = System.Drawing.Color.Maroon
-        DataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.DGRemote.DefaultCellStyle = DataGridViewCellStyle7
+        DataGridViewCellStyle107.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle107.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle107.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle107.ForeColor = System.Drawing.Color.Maroon
+        DataGridViewCellStyle107.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle107.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle107.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DGRemote.DefaultCellStyle = DataGridViewCellStyle107
         Me.DGRemote.Location = New System.Drawing.Point(-3, 22)
         Me.DGRemote.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.DGRemote.MultiSelect = False
         Me.DGRemote.Name = "DGRemote"
         Me.DGRemote.ReadOnly = True
-        DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle8.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DGRemote.RowHeadersDefaultCellStyle = DataGridViewCellStyle8
+        DataGridViewCellStyle108.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle108.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle108.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle108.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle108.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle108.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle108.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DGRemote.RowHeadersDefaultCellStyle = DataGridViewCellStyle108
         Me.DGRemote.RowHeadersVisible = False
         Me.DGRemote.RowHeadersWidth = 62
         Me.DGRemote.RowTemplate.ReadOnly = True
@@ -673,42 +692,42 @@ Partial Class Form1
         Me.DGLocal.AllowUserToAddRows = False
         Me.DGLocal.AllowUserToDeleteRows = False
         Me.DGLocal.AllowUserToOrderColumns = True
-        DataGridViewCellStyle9.BackColor = System.Drawing.Color.LightBlue
-        Me.DGLocal.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle9
+        DataGridViewCellStyle109.BackColor = System.Drawing.Color.LightBlue
+        Me.DGLocal.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle109
         Me.DGLocal.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.DGLocal.BackgroundColor = System.Drawing.Color.White
-        DataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle10.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DGLocal.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle10
+        DataGridViewCellStyle110.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle110.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle110.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle110.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle110.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle110.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle110.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DGLocal.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle110
         Me.DGLocal.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle11.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle11.ForeColor = System.Drawing.Color.Maroon
-        DataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.DGLocal.DefaultCellStyle = DataGridViewCellStyle11
+        DataGridViewCellStyle111.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle111.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle111.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle111.ForeColor = System.Drawing.Color.Maroon
+        DataGridViewCellStyle111.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle111.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle111.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DGLocal.DefaultCellStyle = DataGridViewCellStyle111
         Me.DGLocal.Location = New System.Drawing.Point(-3, 22)
         Me.DGLocal.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.DGLocal.MultiSelect = False
         Me.DGLocal.Name = "DGLocal"
         Me.DGLocal.ReadOnly = True
-        DataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle12.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DGLocal.RowHeadersDefaultCellStyle = DataGridViewCellStyle12
+        DataGridViewCellStyle112.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle112.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle112.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle112.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle112.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle112.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle112.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DGLocal.RowHeadersDefaultCellStyle = DataGridViewCellStyle112
         Me.DGLocal.RowHeadersVisible = False
         Me.DGLocal.RowHeadersWidth = 62
         Me.DGLocal.RowTemplate.ReadOnly = True
@@ -723,42 +742,42 @@ Partial Class Form1
         Me.DGFTP.AllowUserToAddRows = False
         Me.DGFTP.AllowUserToDeleteRows = False
         Me.DGFTP.AllowUserToOrderColumns = True
-        DataGridViewCellStyle13.BackColor = System.Drawing.Color.LightBlue
-        Me.DGFTP.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle13
+        DataGridViewCellStyle113.BackColor = System.Drawing.Color.LightBlue
+        Me.DGFTP.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle113
         Me.DGFTP.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.DGFTP.BackgroundColor = System.Drawing.Color.White
-        DataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle14.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DGFTP.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle14
+        DataGridViewCellStyle114.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle114.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle114.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle114.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle114.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle114.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle114.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DGFTP.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle114
         Me.DGFTP.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle15.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle15.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle15.ForeColor = System.Drawing.Color.Maroon
-        DataGridViewCellStyle15.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.DGFTP.DefaultCellStyle = DataGridViewCellStyle15
+        DataGridViewCellStyle115.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle115.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle115.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle115.ForeColor = System.Drawing.Color.Maroon
+        DataGridViewCellStyle115.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle115.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle115.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DGFTP.DefaultCellStyle = DataGridViewCellStyle115
         Me.DGFTP.Location = New System.Drawing.Point(-3, 22)
         Me.DGFTP.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.DGFTP.MultiSelect = False
         Me.DGFTP.Name = "DGFTP"
         Me.DGFTP.ReadOnly = True
-        DataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle16.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle16.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle16.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle16.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle16.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DGFTP.RowHeadersDefaultCellStyle = DataGridViewCellStyle16
+        DataGridViewCellStyle116.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle116.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle116.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle116.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle116.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle116.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle116.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DGFTP.RowHeadersDefaultCellStyle = DataGridViewCellStyle116
         Me.DGFTP.RowHeadersVisible = False
         Me.DGFTP.RowHeadersWidth = 62
         Me.DGFTP.RowTemplate.ReadOnly = True
@@ -773,42 +792,42 @@ Partial Class Form1
         Me.DGCF.AllowUserToAddRows = False
         Me.DGCF.AllowUserToDeleteRows = False
         Me.DGCF.AllowUserToOrderColumns = True
-        DataGridViewCellStyle17.BackColor = System.Drawing.Color.LightBlue
-        Me.DGCF.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle17
+        DataGridViewCellStyle117.BackColor = System.Drawing.Color.LightBlue
+        Me.DGCF.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle117
         Me.DGCF.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.DGCF.BackgroundColor = System.Drawing.Color.White
-        DataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle18.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle18.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle18.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle18.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle18.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DGCF.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle18
+        DataGridViewCellStyle118.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle118.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle118.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle118.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle118.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle118.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle118.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DGCF.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle118
         Me.DGCF.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle19.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle19.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle19.ForeColor = System.Drawing.Color.Maroon
-        DataGridViewCellStyle19.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle19.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle19.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.DGCF.DefaultCellStyle = DataGridViewCellStyle19
+        DataGridViewCellStyle119.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle119.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle119.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle119.ForeColor = System.Drawing.Color.Maroon
+        DataGridViewCellStyle119.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle119.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle119.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DGCF.DefaultCellStyle = DataGridViewCellStyle119
         Me.DGCF.Location = New System.Drawing.Point(-3, 22)
         Me.DGCF.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.DGCF.MultiSelect = False
         Me.DGCF.Name = "DGCF"
         Me.DGCF.ReadOnly = True
-        DataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle20.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle20.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle20.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle20.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle20.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle20.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DGCF.RowHeadersDefaultCellStyle = DataGridViewCellStyle20
+        DataGridViewCellStyle120.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle120.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle120.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle120.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle120.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle120.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle120.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DGCF.RowHeadersDefaultCellStyle = DataGridViewCellStyle120
         Me.DGCF.RowHeadersVisible = False
         Me.DGCF.RowHeadersWidth = 62
         Me.DGCF.RowTemplate.ReadOnly = True
@@ -904,7 +923,7 @@ Partial Class Form1
         'ChkBullet
         '
         Me.ChkBullet.AutoSize = True
-        Me.ChkBullet.Location = New System.Drawing.Point(310, 6)
+        Me.ChkBullet.Location = New System.Drawing.Point(239, 6)
         Me.ChkBullet.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.ChkBullet.Name = "ChkBullet"
         Me.ChkBullet.Size = New System.Drawing.Size(193, 24)
@@ -937,7 +956,7 @@ Partial Class Form1
         Me.Chkwordwrap.AutoSize = True
         Me.Chkwordwrap.Checked = True
         Me.Chkwordwrap.CheckState = System.Windows.Forms.CheckState.Checked
-        Me.Chkwordwrap.Location = New System.Drawing.Point(534, 6)
+        Me.Chkwordwrap.Location = New System.Drawing.Point(463, 6)
         Me.Chkwordwrap.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.Chkwordwrap.Name = "Chkwordwrap"
         Me.Chkwordwrap.Size = New System.Drawing.Size(111, 24)
@@ -1293,8 +1312,9 @@ Partial Class Form1
         '
         'PicAlert
         '
+        Me.PicAlert.BackgroundImage = Global.EasyNotes.My.Resources.Resources.alert_blink
         Me.PicAlert.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.PicAlert.Location = New System.Drawing.Point(100, 86)
+        Me.PicAlert.Location = New System.Drawing.Point(94, 84)
         Me.PicAlert.Margin = New System.Windows.Forms.Padding(0)
         Me.PicAlert.Name = "PicAlert"
         Me.PicAlert.Size = New System.Drawing.Size(22, 23)
@@ -1437,7 +1457,7 @@ Partial Class Form1
         '
         Me.AboutToolStripMenuItem.Image = CType(resources.GetObject("AboutToolStripMenuItem.Image"), System.Drawing.Image)
         Me.AboutToolStripMenuItem.Name = "AboutToolStripMenuItem"
-        Me.AboutToolStripMenuItem.Size = New System.Drawing.Size(189, 34)
+        Me.AboutToolStripMenuItem.Size = New System.Drawing.Size(270, 34)
         Me.AboutToolStripMenuItem.Text = "About"
         '
         'FeedbackToolStripMenuItem
