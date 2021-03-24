@@ -254,6 +254,7 @@
   <ItemGroup>
     <Content Include="anchor.ico" />
     <Content Include="Easy Notes.ico" />
+    <None Include="Resources\ServiceDesk.PNG" />
     <None Include="Resources\ShowHide %282%29.png" />
     <None Include="Resources\ShowHide.PNG" />
     <None Include="Resources\View Doc.ico" />

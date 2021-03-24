@@ -64,9 +64,9 @@ Public Class CopyResource
             If ChkCopyLocalShare.Checked = True Then
                 common.PBLS = True
             End If
-            If ChkCopyCF.Checked = True Then
-                common.PBCF = True
-            End If
+            'If ChkCopyCF.Checked = True Then
+            '    common.PBCF = True
+            'End If
             'If ChkCopyOtherLocation.Checked = True Then
             '    common.PBFTP = True
             'End If
@@ -100,29 +100,29 @@ Public Class CopyResource
 
             End If
 
-            If ChkCopyCF.Checked = True Then
-                If My.Computer.FileSystem.DirectoryExists(TxtCFPath.Text.Trim) = True Then
-                    My.Computer.FileSystem.CopyFile(TxtCopyFrom.Text.Trim, TxtCFPath.Text.Trim & "\" & FLName, True)
-                Else
-                    'MsgBox("The customer file location does not exists, Please create it through the 'Customer Files' section in MSSolve and try again.", MsgBoxStyle.Exclamation)
-                    My.Computer.FileSystem.CreateDirectory(TxtCFPath.Text.Trim)
-                    My.Computer.FileSystem.CopyFile(TxtCopyFrom.Text.Trim, TxtCFPath.Text.Trim & "\" & FLName, True)
-                End If
+            'If ChkCopyCF.Checked = True Then
+            '    If My.Computer.FileSystem.DirectoryExists(TxtCFPath.Text.Trim) = True Then
+            '        My.Computer.FileSystem.CopyFile(TxtCopyFrom.Text.Trim, TxtCFPath.Text.Trim & "\" & FLName, True)
+            '    Else
+            '        'MsgBox("The customer file location does not exists, Please create it through the 'Customer Files' section in MSSolve and try again.", MsgBoxStyle.Exclamation)
+            '        My.Computer.FileSystem.CreateDirectory(TxtCFPath.Text.Trim)
+            '        My.Computer.FileSystem.CopyFile(TxtCopyFrom.Text.Trim, TxtCFPath.Text.Trim & "\" & FLName, True)
+            '    End If
 
-                S = S & TxtCFPath.Text.Trim & vbCrLf & vbCrLf
+            '    S = S & TxtCFPath.Text.Trim & vbCrLf & vbCrLf
 
-            End If
+            'End If
 
-            If ChkCopyOtherLocation.Checked = True Then
-                If My.Computer.FileSystem.DirectoryExists(TxtOtherPath.Text.Trim) = True Then
-                    My.Computer.FileSystem.CopyFile(TxtCopyFrom.Text.Trim, TxtOtherPath.Text.Trim & "\" & FLName, True)
-                Else
-                    My.Computer.FileSystem.CreateDirectory(TxtOtherPath.Text.Trim)
-                    My.Computer.FileSystem.CopyFile(TxtCopyFrom.Text.Trim, TxtOtherPath.Text.Trim & "\" & FLName, True)
-                End If
-                S = S & TxtOtherPath.Text.Trim & vbCrLf
+            'If ChkCopyOtherLocation.Checked = True Then
+            '    If My.Computer.FileSystem.DirectoryExists(TxtOtherPath.Text.Trim) = True Then
+            '        My.Computer.FileSystem.CopyFile(TxtCopyFrom.Text.Trim, TxtOtherPath.Text.Trim & "\" & FLName, True)
+            '    Else
+            '        My.Computer.FileSystem.CreateDirectory(TxtOtherPath.Text.Trim)
+            '        My.Computer.FileSystem.CopyFile(TxtCopyFrom.Text.Trim, TxtOtherPath.Text.Trim & "\" & FLName, True)
+            '    End If
+            '    S = S & TxtOtherPath.Text.Trim & vbCrLf
 
-            End If
+            'End If
             MsgBox("Copying the file """ & FLName & """ completed successfully to the following location." & vbCrLf & vbCrLf & S, MsgBoxStyle.Information)
             common.CollectFileList = True
 
@@ -194,10 +194,10 @@ Public Class CopyResource
     '    End Try
     'End Sub
 
-    Private Sub BtnCopyTo_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnCopyTo.Click
+    Private Sub BtnCopyTo_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
         Try
             ODD.ShowDialog()
-            TxtOtherPath.Text = ODD.SelectedPath
+            'TxtOtherPath.Text = ODD.SelectedPath
         Catch ex As Exception
             MsgBox(ex.Message, MsgBoxStyle.Exclamation)
         End Try
@@ -205,32 +205,32 @@ Public Class CopyResource
 
     Private Sub CopyResource_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         Try
-            TxtDSDBPath.Text = common.DSDBshare & "\" & common.CaseNo & DateDirectory
-            TxtLocalPath.Text = common.NotesRoot & "\" & common.CaseNo & DateDirectory
+            TxtDSDBPath.Text = Common.DSDBshare & "\" & Common.CaseNo & DateDirectory
+            TxtLocalPath.Text = Common.NotesRoot & "\" & Common.CaseNo & DateDirectory
 
-            If common.IsMSSolveCase = True Then
-                'TxtCFPath.Enabled = True
-                'ChkCopyCF.Enabled = True
-                'ChkDateCF.Enabled = True
+            'If common.IsMSSolveCase = True Then
+            '    'TxtCFPath.Enabled = True
+            '    'ChkCopyCF.Enabled = True
+            '    'ChkDateCF.Enabled = True
 
-                If Form1.LblCF.Text.Trim = "" Then
-                    TxtCFPath.Text = ""
-                    TxtCFPath.Enabled = False
-                    ChkCopyCF.Checked = False
-                    ChkCopyCF.Enabled = False
-                Else
-                    TxtCFPath.Text = Form1.LblCF.Text.Trim & DateDirectory
-                    TxtCFPath.Enabled = True
-                    'ChkCopyCF.Checked = True
-                    'ChkCopyCF.Enabled = True
-                End If
-            Else
-                TxtCFPath.Enabled = False
-                ChkCopyCF.Checked = False
-                ChkCopyCF.Enabled = False
-                ChkDateCF.Enabled = False
-                TxtCFPath.Text = ""
-            End If
+            '    'If Form1.LblCF.Text.Trim = "" Then
+            '    '    TxtCFPath.Text = ""
+            '    '    TxtCFPath.Enabled = False
+            '    '    ChkCopyCF.Checked = False
+            '    '    ChkCopyCF.Enabled = False
+            '    'Else
+            '    '    TxtCFPath.Text = Form1.LblCF.Text.Trim & DateDirectory
+            '    '    TxtCFPath.Enabled = True
+            '    '    'ChkCopyCF.Checked = True
+            '    '    'ChkCopyCF.Enabled = True
+            '    'End If
+            'Else
+            '    TxtCFPath.Enabled = False
+            '    ChkCopyCF.Checked = False
+            '    ChkCopyCF.Enabled = False
+            '    ChkDateCF.Enabled = False
+            '    TxtCFPath.Text = ""
+            'End If
 
         Catch ex As Exception
             MsgBox(ex.Message, MsgBoxStyle.Exclamation)
@@ -246,25 +246,25 @@ Public Class CopyResource
 
     End Sub
 
-    Private Sub TxtOtherPath_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles TxtOtherPath.TextChanged
-        If TxtOtherPath.Text.Trim = "" Then
-            ChkCopyOtherLocation.Enabled = False
-            ChkCopyOtherLocation.Checked = False
-        Else
-            ChkCopyOtherLocation.Enabled = True
-            ChkCopyOtherLocation.Checked = True
-        End If
+    'Private Sub TxtOtherPath_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs)
+    '    If TxtOtherPath.Text.Trim = "" Then
+    '        ChkCopyOtherLocation.Enabled = False
+    '        ChkCopyOtherLocation.Checked = False
+    '    Else
+    '        ChkCopyOtherLocation.Enabled = True
+    '        ChkCopyOtherLocation.Checked = True
+    '    End If
 
-    End Sub
+    'End Sub
 
     Private Sub ChkDateTS_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles ChkDateTS.Click
         Try
             If ChkDateTS.Checked = True Then
-                TxtDSDBPath.Text = TxtDSDBPath.Text.Trim & datedirectory
+                TxtDSDBPath.Text = TxtDSDBPath.Text.Trim & DateDirectory
                 'MsgBox(Format(Now, "ddMMMMMMMMMyyyy"))
             Else
 
-                TxtDSDBPath.Text = TxtDSDBPath.Text.Replace(datedirectory, "")
+                TxtDSDBPath.Text = TxtDSDBPath.Text.Replace(DateDirectory, "")
 
             End If
 
@@ -273,7 +273,7 @@ Public Class CopyResource
         End Try
     End Sub
 
-   
+
 
     Private Sub ChkDateLS_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles ChkDateLS.Click
         Try
@@ -291,19 +291,19 @@ Public Class CopyResource
         End Try
     End Sub
 
-    Private Sub ChkDateCF_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ChkDateCF.CheckedChanged
-        Try
-            If ChkDateCF.Checked = True Then
-                TxtCFPath.Text = TxtCFPath.Text.Trim & DateDirectory
-                'MsgBox(Format(Now, "ddMMMMMMMMMyyyy"))
-            Else
+    ''Private Sub ChkDateCF_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs)
+    ''    Try
+    ''        If ChkDateCF.Checked = True Then
+    ''            TxtCFPath.Text = TxtCFPath.Text.Trim & DateDirectory
+    ''            'MsgBox(Format(Now, "ddMMMMMMMMMyyyy"))
+    ''        Else
 
-                TxtCFPath.Text = TxtCFPath.Text.Replace(DateDirectory, "")
+    ''            TxtCFPath.Text = TxtCFPath.Text.Replace(DateDirectory, "")
 
-            End If
+    ''        End If
 
-        Catch ex As Exception
-            MsgBox(ex.Message, MsgBoxStyle.Exclamation)
-        End Try
-    End Sub
+    ''    Catch ex As Exception
+    ''        MsgBox(ex.Message, MsgBoxStyle.Exclamation)
+    ''    End Try
+    ''End Sub
 End Class

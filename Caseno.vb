@@ -8,28 +8,33 @@ Public Class Caseno
     Private Sub OK_Button_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles OK_Button.Click
         If common.IsCaseNo(TxtCaseno.Text.Trim) = True Then
 
+            If String.IsNullOrWhiteSpace(TxtCname.Text) Then
+                MsgBox("Please enter a valid customer name.", MsgBoxStyle.Exclamation)
+                Exit Sub
+            End If
+
             Me.Visible = False
 
             If ChkDonotLoadNotes.Checked = True Then
-                common.DonotLoadPreviousNotes = True
+                Common.DonotLoadPreviousNotes = True
             Else
-                common.DonotLoadPreviousNotes = False
+                Common.DonotLoadPreviousNotes = False
             End If
 
-            common.CaseNo = TxtCaseno.Text.Trim
-            common.CustomerName = TxtCname.Text.Trim
+            Common.CaseNo = TxtCaseno.Text.Trim
+            Common.CustomerName = TxtCname.Text.Trim
             If TxtCname.Text.Trim.Length > 0 Then
                 If TxtCname.Text.Trim.IndexOf(" ") = -1 Then
-                    common.CustomerFName = TxtCname.Text.Trim
-                    common.CustomerLName = ""
+                    Common.CustomerFName = TxtCname.Text.Trim
+                    Common.CustomerLName = ""
                 Else
-                    common.CustomerFName = TxtCname.Text.Trim.Substring(0, TxtCname.Text.Trim.IndexOf(" ")).Trim
-                    common.CustomerLName = TxtCname.Text.Trim.Substring(TxtCname.Text.Trim.IndexOf(" "), TxtCname.Text.Trim.Length - TxtCname.Text.Trim.IndexOf(" ")).Trim
+                    Common.CustomerFName = TxtCname.Text.Trim.Substring(0, TxtCname.Text.Trim.IndexOf(" ")).Trim
+                    Common.CustomerLName = TxtCname.Text.Trim.Substring(TxtCname.Text.Trim.IndexOf(" "), TxtCname.Text.Trim.Length - TxtCname.Text.Trim.IndexOf(" ")).Trim
                 End If
             End If
-            Form1.LblCustomer.Text = common.CustomerName
-            Form1.lblCaseno.Text = common.CaseNo
-            Form1.Text = "Easy Notes v " & common.Version & " [" & common.CustomerName & "] , [" & common.CaseNo & "]"
+            Form1.LblCustomer.Text = Common.CustomerName
+            Form1.lblCaseno.Text = Common.CaseNo
+            Form1.Text = "Easy Notes v " & Common.Version & " [" & Common.CustomerName & "] , [" & Common.CaseNo & "]"
             'Form1.BtnReset_Click(sender, e)
             Form1.SW.Reset()
             Form1.SW.Start()

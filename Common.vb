@@ -196,6 +196,13 @@ Public Class Common
                         Return p.MainWindowTitle.Substring(0, sr - 2) ' name
                         Exit Function
                     End If
+                ElseIf p.MainWindowTitle.EndsWith("- Dynamics 365") Then
+
+                    Dim sr As Integer = p.MainWindowTitle.LastIndexOf("-")
+                    If i = 1 Then
+                        Return p.MainWindowTitle.Substring(0, sr - 1).Trim ' caseno
+                        Exit Function
+                    End If
                 End If
 
             Next
@@ -219,40 +226,40 @@ Public Class Common
 
 
 
-    Friend Function GetFTPInternalDirectory(ByVal Caseno As String) As String
-        Try
-            Dim MyWebClient As New WebClient
-            Dim htmltext As String
-            MyWebClient.Credentials = CredentialCache.DefaultCredentials
-            ' Read web page HTML to byte array
-            Dim PageHTMLBytes() As Byte
-            PageHTMLBytes = MyWebClient.DownloadData("https://filexfer.partners.extranet.microsoft.com/ViewWorkspace.aspx")
-            ' Convert result from byte array to string 
-            Dim oUTF8 As UTF8Encoding = New UTF8Encoding()
-            htmltext = oUTF8.GetString(PageHTMLBytes)
+    'Friend Function GetFTPInternalDirectory(ByVal Caseno As String) As String
+    '    Try
+    '        Dim MyWebClient As New WebClient
+    '        Dim htmltext As String
+    '        MyWebClient.Credentials = CredentialCache.DefaultCredentials
+    '        ' Read web page HTML to byte array
+    '        Dim PageHTMLBytes() As Byte
+    '        PageHTMLBytes = MyWebClient.DownloadData("https://filexfer.partners.extranet.microsoft.com/ViewWorkspace.aspx")
+    '        ' Convert result from byte array to string 
+    '        Dim oUTF8 As UTF8Encoding = New UTF8Encoding()
+    '        htmltext = oUTF8.GetString(PageHTMLBytes)
 
-            Dim findcaseno As Integer
-            findcaseno = htmltext.IndexOf("Case Number " & Caseno)
+    '        Dim findcaseno As Integer
+    '        findcaseno = htmltext.IndexOf("Case Number " & Caseno)
 
-            Dim searchstart As Integer
-            searchstart = htmltext.IndexOf("<a href=""", findcaseno)
+    '        Dim searchstart As Integer
+    '        searchstart = htmltext.IndexOf("<a href=""", findcaseno)
 
-            Dim searchend As Integer
-            searchend = htmltext.IndexOf(""" target=""", findcaseno)
+    '        Dim searchend As Integer
+    '        searchend = htmltext.IndexOf(""" target=""", findcaseno)
 
-            Dim id As String
-            id = htmltext.Substring(searchstart + 9, searchend - searchstart - 9)
-            Return id
+    '        Dim id As String
+    '        id = htmltext.Substring(searchstart + 9, searchend - searchstart - 9)
+    '        Return id
 
-        Catch ex As Exception
-            If ex.Message.StartsWith("Index was out of range") Then
-                Return ""
-            Else
-                MsgBox(ex.Message, MsgBoxStyle.Exclamation)
-            End If
+    '    Catch ex As Exception
+    '        If ex.Message.StartsWith("Index was out of range") Then
+    '            Return ""
+    '        Else
+    '            MsgBox(ex.Message, MsgBoxStyle.Exclamation)
+    '        End If
 
-        End Try
-    End Function
+    '    End Try
+    'End Function
 
 
 
@@ -461,187 +468,187 @@ Public Class Common
     'End Function
 
 
-    Friend Function getCustomerFilePath() As String
-        Dim yyyy, mm, dd As String
-        Dim FinalString As String = ""
-        Try
-            If IsMSSolveCase() = True Then
-                yyyy = "20" & CaseNo.Substring(1, 2)
-                mm = CaseNo.Substring(3, 2)
-                dd = CaseNo.Substring(5, 2)
+    'Friend Function getCustomerFilePath() As String
+    '    Dim yyyy, mm, dd As String
+    '    Dim FinalString As String = ""
+    '    Try
+    '        If IsMSSolveCase() = True Then
+    '            yyyy = "20" & CaseNo.Substring(1, 2)
+    '            mm = CaseNo.Substring(3, 2)
+    '            dd = CaseNo.Substring(5, 2)
 
-                'For i As Integer = dd - 1 To dd + 1
-                '    If Directory.Exists("\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders10\" & yyyy & "\" & mm & "\" & i & "\" & CaseNo) = True Then
-                '        FinalString = "\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders10\" & yyyy & "\" & mm & "\" & i & "\" & CaseNo
-                '    ElseIf Directory.Exists("\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders01\" & yyyy & "\" & mm & "\" & i & "\" & CaseNo) = True Then
-                '        FinalString = "\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders01\" & yyyy & "\" & mm & "\" & i & "\" & CaseNo
-                '    ElseIf Directory.Exists("\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders02\" & yyyy & "\" & mm & "\" & i & "\" & CaseNo) = True Then
-                '        FinalString = "\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders02\" & yyyy & "\" & mm & "\" & i & "\" & CaseNo
-                '    ElseIf Directory.Exists("\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders03\" & yyyy & "\" & mm & "\" & i & "\" & CaseNo) = True Then
-                '        FinalString = "\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders03\" & yyyy & "\" & mm & "\" & i & "\" & CaseNo
-                '    ElseIf Directory.Exists("\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders04\" & yyyy & "\" & mm & "\" & i & "\" & CaseNo) = True Then
-                '        FinalString = "\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders04\" & yyyy & "\" & mm & "\" & i & "\" & CaseNo
-                '    ElseIf Directory.Exists("\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders05\" & yyyy & "\" & mm & "\" & i & "\" & CaseNo) = True Then
-                '        FinalString = "\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders05\" & yyyy & "\" & mm & "\" & i & "\" & CaseNo
-                '    ElseIf Directory.Exists("\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders06\" & yyyy & "\" & mm & "\" & i & "\" & CaseNo) = True Then
-                '        FinalString = "\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders06\" & yyyy & "\" & mm & "\" & i & "\" & CaseNo
-                '    ElseIf Directory.Exists("\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders07\" & yyyy & "\" & mm & "\" & i & "\" & CaseNo) = True Then
-                '        FinalString = "\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders07\" & yyyy & "\" & mm & "\" & i & "\" & CaseNo
-                '    ElseIf Directory.Exists("\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders08\" & yyyy & "\" & mm & "\" & i & "\" & CaseNo) = True Then
-                '        FinalString = "\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders08\" & yyyy & "\" & mm & "\" & i & "\" & CaseNo
-                '    ElseIf Directory.Exists("\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders09\" & yyyy & "\" & mm & "\" & i & "\" & CaseNo) = True Then
-                '        FinalString = "\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders09\" & yyyy & "\" & mm & "\" & i & "\" & CaseNo
-                '    ElseIf Directory.Exists("\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders\" & yyyy & "\" & mm & "\" & i & "\" & CaseNo) = True Then
-                '        FinalString = "\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders\" & yyyy & "\" & mm & "\" & i & "\" & CaseNo
-                '    End If
-                'Next
+    '            'For i As Integer = dd - 1 To dd + 1
+    '            '    If Directory.Exists("\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders10\" & yyyy & "\" & mm & "\" & i & "\" & CaseNo) = True Then
+    '            '        FinalString = "\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders10\" & yyyy & "\" & mm & "\" & i & "\" & CaseNo
+    '            '    ElseIf Directory.Exists("\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders01\" & yyyy & "\" & mm & "\" & i & "\" & CaseNo) = True Then
+    '            '        FinalString = "\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders01\" & yyyy & "\" & mm & "\" & i & "\" & CaseNo
+    '            '    ElseIf Directory.Exists("\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders02\" & yyyy & "\" & mm & "\" & i & "\" & CaseNo) = True Then
+    '            '        FinalString = "\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders02\" & yyyy & "\" & mm & "\" & i & "\" & CaseNo
+    '            '    ElseIf Directory.Exists("\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders03\" & yyyy & "\" & mm & "\" & i & "\" & CaseNo) = True Then
+    '            '        FinalString = "\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders03\" & yyyy & "\" & mm & "\" & i & "\" & CaseNo
+    '            '    ElseIf Directory.Exists("\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders04\" & yyyy & "\" & mm & "\" & i & "\" & CaseNo) = True Then
+    '            '        FinalString = "\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders04\" & yyyy & "\" & mm & "\" & i & "\" & CaseNo
+    '            '    ElseIf Directory.Exists("\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders05\" & yyyy & "\" & mm & "\" & i & "\" & CaseNo) = True Then
+    '            '        FinalString = "\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders05\" & yyyy & "\" & mm & "\" & i & "\" & CaseNo
+    '            '    ElseIf Directory.Exists("\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders06\" & yyyy & "\" & mm & "\" & i & "\" & CaseNo) = True Then
+    '            '        FinalString = "\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders06\" & yyyy & "\" & mm & "\" & i & "\" & CaseNo
+    '            '    ElseIf Directory.Exists("\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders07\" & yyyy & "\" & mm & "\" & i & "\" & CaseNo) = True Then
+    '            '        FinalString = "\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders07\" & yyyy & "\" & mm & "\" & i & "\" & CaseNo
+    '            '    ElseIf Directory.Exists("\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders08\" & yyyy & "\" & mm & "\" & i & "\" & CaseNo) = True Then
+    '            '        FinalString = "\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders08\" & yyyy & "\" & mm & "\" & i & "\" & CaseNo
+    '            '    ElseIf Directory.Exists("\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders09\" & yyyy & "\" & mm & "\" & i & "\" & CaseNo) = True Then
+    '            '        FinalString = "\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders09\" & yyyy & "\" & mm & "\" & i & "\" & CaseNo
+    '            '    ElseIf Directory.Exists("\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders\" & yyyy & "\" & mm & "\" & i & "\" & CaseNo) = True Then
+    '            '        FinalString = "\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders\" & yyyy & "\" & mm & "\" & i & "\" & CaseNo
+    '            '    End If
+    '            'Next
 
-                If Directory.Exists("\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders10\" & yyyy & "\" & mm & "\" & dd & "\" & CaseNo) = True Then
-                    FinalString = "\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders10\" & yyyy & "\" & mm & "\" & dd & "\" & CaseNo
-                ElseIf Directory.Exists("\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders01\" & yyyy & "\" & mm & "\" & dd & "\" & CaseNo) = True Then
-                    FinalString = "\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders01\" & yyyy & "\" & mm & "\" & dd & "\" & CaseNo
-                ElseIf Directory.Exists("\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders02\" & yyyy & "\" & mm & "\" & dd & "\" & CaseNo) = True Then
-                    FinalString = "\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders02\" & yyyy & "\" & mm & "\" & dd & "\" & CaseNo
-                ElseIf Directory.Exists("\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders03\" & yyyy & "\" & mm & "\" & dd & "\" & CaseNo) = True Then
-                    FinalString = "\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders03\" & yyyy & "\" & mm & "\" & dd & "\" & CaseNo
-                ElseIf Directory.Exists("\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders04\" & yyyy & "\" & mm & "\" & dd & "\" & CaseNo) = True Then
-                    FinalString = "\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders04\" & yyyy & "\" & mm & "\" & dd & "\" & CaseNo
-                ElseIf Directory.Exists("\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders05\" & yyyy & "\" & mm & "\" & dd & "\" & CaseNo) = True Then
-                    FinalString = "\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders05\" & yyyy & "\" & mm & "\" & dd & "\" & CaseNo
-                ElseIf Directory.Exists("\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders06\" & yyyy & "\" & mm & "\" & dd & "\" & CaseNo) = True Then
-                    FinalString = "\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders06\" & yyyy & "\" & mm & "\" & dd & "\" & CaseNo
-                ElseIf Directory.Exists("\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders07\" & yyyy & "\" & mm & "\" & dd & "\" & CaseNo) = True Then
-                    FinalString = "\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders07\" & yyyy & "\" & mm & "\" & dd & "\" & CaseNo
-                ElseIf Directory.Exists("\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders08\" & yyyy & "\" & mm & "\" & dd & "\" & CaseNo) = True Then
-                    FinalString = "\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders08\" & yyyy & "\" & mm & "\" & dd & "\" & CaseNo
-                ElseIf Directory.Exists("\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders09\" & yyyy & "\" & mm & "\" & dd & "\" & CaseNo) = True Then
-                    FinalString = "\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders09\" & yyyy & "\" & mm & "\" & dd & "\" & CaseNo
-                ElseIf Directory.Exists("\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders\" & yyyy & "\" & mm & "\" & dd & "\" & CaseNo) = True Then
-                    FinalString = "\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders\" & yyyy & "\" & mm & "\" & dd & "\" & CaseNo
-                End If
-
-
-                'for previous day
-                If FinalString.Trim = "" And dd > 1 Then
-                    dd = dd - 1
-                    If Directory.Exists("\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders10\" & yyyy & "\" & mm & "\" & dd & "\" & CaseNo) = True Then
-                        FinalString = "\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders10\" & yyyy & "\" & mm & "\" & dd & "\" & CaseNo
-                    ElseIf Directory.Exists("\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders01\" & yyyy & "\" & mm & "\" & dd & "\" & CaseNo) = True Then
-                        FinalString = "\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders01\" & yyyy & "\" & mm & "\" & dd & "\" & CaseNo
-                    ElseIf Directory.Exists("\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders02\" & yyyy & "\" & mm & "\" & dd & "\" & CaseNo) = True Then
-                        FinalString = "\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders02\" & yyyy & "\" & mm & "\" & dd & "\" & CaseNo
-                    ElseIf Directory.Exists("\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders03\" & yyyy & "\" & mm & "\" & dd & "\" & CaseNo) = True Then
-                        FinalString = "\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders03\" & yyyy & "\" & mm & "\" & dd & "\" & CaseNo
-                    ElseIf Directory.Exists("\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders04\" & yyyy & "\" & mm & "\" & dd & "\" & CaseNo) = True Then
-                        FinalString = "\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders04\" & yyyy & "\" & mm & "\" & dd & "\" & CaseNo
-                    ElseIf Directory.Exists("\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders05\" & yyyy & "\" & mm & "\" & dd & "\" & CaseNo) = True Then
-                        FinalString = "\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders05\" & yyyy & "\" & mm & "\" & dd & "\" & CaseNo
-                    ElseIf Directory.Exists("\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders06\" & yyyy & "\" & mm & "\" & dd & "\" & CaseNo) = True Then
-                        FinalString = "\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders06\" & yyyy & "\" & mm & "\" & dd & "\" & CaseNo
-                    ElseIf Directory.Exists("\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders07\" & yyyy & "\" & mm & "\" & dd & "\" & CaseNo) = True Then
-                        FinalString = "\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders07\" & yyyy & "\" & mm & "\" & dd & "\" & CaseNo
-                    ElseIf Directory.Exists("\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders08\" & yyyy & "\" & mm & "\" & dd & "\" & CaseNo) = True Then
-                        FinalString = "\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders08\" & yyyy & "\" & mm & "\" & dd & "\" & CaseNo
-                    ElseIf Directory.Exists("\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders09\" & yyyy & "\" & mm & "\" & dd & "\" & CaseNo) = True Then
-                        FinalString = "\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders09\" & yyyy & "\" & mm & "\" & dd & "\" & CaseNo
-                    ElseIf Directory.Exists("\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders\" & yyyy & "\" & mm & "\" & dd & "\" & CaseNo) = True Then
-                        FinalString = "\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders\" & yyyy & "\" & mm & "\" & dd & "\" & CaseNo
-                    End If
-                End If
+    '            If Directory.Exists("\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders10\" & yyyy & "\" & mm & "\" & dd & "\" & CaseNo) = True Then
+    '                FinalString = "\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders10\" & yyyy & "\" & mm & "\" & dd & "\" & CaseNo
+    '            ElseIf Directory.Exists("\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders01\" & yyyy & "\" & mm & "\" & dd & "\" & CaseNo) = True Then
+    '                FinalString = "\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders01\" & yyyy & "\" & mm & "\" & dd & "\" & CaseNo
+    '            ElseIf Directory.Exists("\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders02\" & yyyy & "\" & mm & "\" & dd & "\" & CaseNo) = True Then
+    '                FinalString = "\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders02\" & yyyy & "\" & mm & "\" & dd & "\" & CaseNo
+    '            ElseIf Directory.Exists("\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders03\" & yyyy & "\" & mm & "\" & dd & "\" & CaseNo) = True Then
+    '                FinalString = "\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders03\" & yyyy & "\" & mm & "\" & dd & "\" & CaseNo
+    '            ElseIf Directory.Exists("\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders04\" & yyyy & "\" & mm & "\" & dd & "\" & CaseNo) = True Then
+    '                FinalString = "\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders04\" & yyyy & "\" & mm & "\" & dd & "\" & CaseNo
+    '            ElseIf Directory.Exists("\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders05\" & yyyy & "\" & mm & "\" & dd & "\" & CaseNo) = True Then
+    '                FinalString = "\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders05\" & yyyy & "\" & mm & "\" & dd & "\" & CaseNo
+    '            ElseIf Directory.Exists("\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders06\" & yyyy & "\" & mm & "\" & dd & "\" & CaseNo) = True Then
+    '                FinalString = "\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders06\" & yyyy & "\" & mm & "\" & dd & "\" & CaseNo
+    '            ElseIf Directory.Exists("\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders07\" & yyyy & "\" & mm & "\" & dd & "\" & CaseNo) = True Then
+    '                FinalString = "\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders07\" & yyyy & "\" & mm & "\" & dd & "\" & CaseNo
+    '            ElseIf Directory.Exists("\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders08\" & yyyy & "\" & mm & "\" & dd & "\" & CaseNo) = True Then
+    '                FinalString = "\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders08\" & yyyy & "\" & mm & "\" & dd & "\" & CaseNo
+    '            ElseIf Directory.Exists("\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders09\" & yyyy & "\" & mm & "\" & dd & "\" & CaseNo) = True Then
+    '                FinalString = "\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders09\" & yyyy & "\" & mm & "\" & dd & "\" & CaseNo
+    '            ElseIf Directory.Exists("\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders\" & yyyy & "\" & mm & "\" & dd & "\" & CaseNo) = True Then
+    '                FinalString = "\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders\" & yyyy & "\" & mm & "\" & dd & "\" & CaseNo
+    '            End If
 
 
-                'for next day
-                If FinalString.Trim = "" And dd < 31 Then
-                    dd = dd + 1
-                    If Directory.Exists("\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders10\" & yyyy & "\" & mm & "\" & dd & "\" & CaseNo) = True Then
-                        FinalString = "\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders10\" & yyyy & "\" & mm & "\" & dd & "\" & CaseNo
-                    ElseIf Directory.Exists("\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders01\" & yyyy & "\" & mm & "\" & dd & "\" & CaseNo) = True Then
-                        FinalString = "\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders01\" & yyyy & "\" & mm & "\" & dd & "\" & CaseNo
-                    ElseIf Directory.Exists("\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders02\" & yyyy & "\" & mm & "\" & dd & "\" & CaseNo) = True Then
-                        FinalString = "\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders02\" & yyyy & "\" & mm & "\" & dd & "\" & CaseNo
-                    ElseIf Directory.Exists("\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders03\" & yyyy & "\" & mm & "\" & dd & "\" & CaseNo) = True Then
-                        FinalString = "\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders03\" & yyyy & "\" & mm & "\" & dd & "\" & CaseNo
-                    ElseIf Directory.Exists("\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders04\" & yyyy & "\" & mm & "\" & dd & "\" & CaseNo) = True Then
-                        FinalString = "\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders04\" & yyyy & "\" & mm & "\" & dd & "\" & CaseNo
-                    ElseIf Directory.Exists("\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders05\" & yyyy & "\" & mm & "\" & dd & "\" & CaseNo) = True Then
-                        FinalString = "\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders05\" & yyyy & "\" & mm & "\" & dd & "\" & CaseNo
-                    ElseIf Directory.Exists("\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders06\" & yyyy & "\" & mm & "\" & dd & "\" & CaseNo) = True Then
-                        FinalString = "\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders06\" & yyyy & "\" & mm & "\" & dd & "\" & CaseNo
-                    ElseIf Directory.Exists("\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders07\" & yyyy & "\" & mm & "\" & dd & "\" & CaseNo) = True Then
-                        FinalString = "\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders07\" & yyyy & "\" & mm & "\" & dd & "\" & CaseNo
-                    ElseIf Directory.Exists("\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders08\" & yyyy & "\" & mm & "\" & dd & "\" & CaseNo) = True Then
-                        FinalString = "\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders08\" & yyyy & "\" & mm & "\" & dd & "\" & CaseNo
-                    ElseIf Directory.Exists("\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders09\" & yyyy & "\" & mm & "\" & dd & "\" & CaseNo) = True Then
-                        FinalString = "\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders09\" & yyyy & "\" & mm & "\" & dd & "\" & CaseNo
-                    ElseIf Directory.Exists("\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders\" & yyyy & "\" & mm & "\" & dd & "\" & CaseNo) = True Then
-                        FinalString = "\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders\" & yyyy & "\" & mm & "\" & dd & "\" & CaseNo
-                    End If
-                End If
+    '            'for previous day
+    '            If FinalString.Trim = "" And dd > 1 Then
+    '                dd = dd - 1
+    '                If Directory.Exists("\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders10\" & yyyy & "\" & mm & "\" & dd & "\" & CaseNo) = True Then
+    '                    FinalString = "\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders10\" & yyyy & "\" & mm & "\" & dd & "\" & CaseNo
+    '                ElseIf Directory.Exists("\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders01\" & yyyy & "\" & mm & "\" & dd & "\" & CaseNo) = True Then
+    '                    FinalString = "\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders01\" & yyyy & "\" & mm & "\" & dd & "\" & CaseNo
+    '                ElseIf Directory.Exists("\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders02\" & yyyy & "\" & mm & "\" & dd & "\" & CaseNo) = True Then
+    '                    FinalString = "\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders02\" & yyyy & "\" & mm & "\" & dd & "\" & CaseNo
+    '                ElseIf Directory.Exists("\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders03\" & yyyy & "\" & mm & "\" & dd & "\" & CaseNo) = True Then
+    '                    FinalString = "\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders03\" & yyyy & "\" & mm & "\" & dd & "\" & CaseNo
+    '                ElseIf Directory.Exists("\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders04\" & yyyy & "\" & mm & "\" & dd & "\" & CaseNo) = True Then
+    '                    FinalString = "\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders04\" & yyyy & "\" & mm & "\" & dd & "\" & CaseNo
+    '                ElseIf Directory.Exists("\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders05\" & yyyy & "\" & mm & "\" & dd & "\" & CaseNo) = True Then
+    '                    FinalString = "\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders05\" & yyyy & "\" & mm & "\" & dd & "\" & CaseNo
+    '                ElseIf Directory.Exists("\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders06\" & yyyy & "\" & mm & "\" & dd & "\" & CaseNo) = True Then
+    '                    FinalString = "\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders06\" & yyyy & "\" & mm & "\" & dd & "\" & CaseNo
+    '                ElseIf Directory.Exists("\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders07\" & yyyy & "\" & mm & "\" & dd & "\" & CaseNo) = True Then
+    '                    FinalString = "\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders07\" & yyyy & "\" & mm & "\" & dd & "\" & CaseNo
+    '                ElseIf Directory.Exists("\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders08\" & yyyy & "\" & mm & "\" & dd & "\" & CaseNo) = True Then
+    '                    FinalString = "\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders08\" & yyyy & "\" & mm & "\" & dd & "\" & CaseNo
+    '                ElseIf Directory.Exists("\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders09\" & yyyy & "\" & mm & "\" & dd & "\" & CaseNo) = True Then
+    '                    FinalString = "\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders09\" & yyyy & "\" & mm & "\" & dd & "\" & CaseNo
+    '                ElseIf Directory.Exists("\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders\" & yyyy & "\" & mm & "\" & dd & "\" & CaseNo) = True Then
+    '                    FinalString = "\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders\" & yyyy & "\" & mm & "\" & dd & "\" & CaseNo
+    '                End If
+    '            End If
 
 
-                'for 2 previous day
-                If FinalString.Trim = "" And dd > 2 Then
-                    dd = dd - 2
-                    If Directory.Exists("\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders10\" & yyyy & "\" & mm & "\" & dd & "\" & CaseNo) = True Then
-                        FinalString = "\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders10\" & yyyy & "\" & mm & "\" & dd & "\" & CaseNo
-                    ElseIf Directory.Exists("\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders01\" & yyyy & "\" & mm & "\" & dd & "\" & CaseNo) = True Then
-                        FinalString = "\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders01\" & yyyy & "\" & mm & "\" & dd & "\" & CaseNo
-                    ElseIf Directory.Exists("\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders02\" & yyyy & "\" & mm & "\" & dd & "\" & CaseNo) = True Then
-                        FinalString = "\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders02\" & yyyy & "\" & mm & "\" & dd & "\" & CaseNo
-                    ElseIf Directory.Exists("\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders03\" & yyyy & "\" & mm & "\" & dd & "\" & CaseNo) = True Then
-                        FinalString = "\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders03\" & yyyy & "\" & mm & "\" & dd & "\" & CaseNo
-                    ElseIf Directory.Exists("\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders04\" & yyyy & "\" & mm & "\" & dd & "\" & CaseNo) = True Then
-                        FinalString = "\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders04\" & yyyy & "\" & mm & "\" & dd & "\" & CaseNo
-                    ElseIf Directory.Exists("\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders05\" & yyyy & "\" & mm & "\" & dd & "\" & CaseNo) = True Then
-                        FinalString = "\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders05\" & yyyy & "\" & mm & "\" & dd & "\" & CaseNo
-                    ElseIf Directory.Exists("\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders06\" & yyyy & "\" & mm & "\" & dd & "\" & CaseNo) = True Then
-                        FinalString = "\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders06\" & yyyy & "\" & mm & "\" & dd & "\" & CaseNo
-                    ElseIf Directory.Exists("\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders07\" & yyyy & "\" & mm & "\" & dd & "\" & CaseNo) = True Then
-                        FinalString = "\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders07\" & yyyy & "\" & mm & "\" & dd & "\" & CaseNo
-                    ElseIf Directory.Exists("\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders08\" & yyyy & "\" & mm & "\" & dd & "\" & CaseNo) = True Then
-                        FinalString = "\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders08\" & yyyy & "\" & mm & "\" & dd & "\" & CaseNo
-                    ElseIf Directory.Exists("\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders09\" & yyyy & "\" & mm & "\" & dd & "\" & CaseNo) = True Then
-                        FinalString = "\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders09\" & yyyy & "\" & mm & "\" & dd & "\" & CaseNo
-                    ElseIf Directory.Exists("\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders\" & yyyy & "\" & mm & "\" & dd & "\" & CaseNo) = True Then
-                        FinalString = "\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders\" & yyyy & "\" & mm & "\" & dd & "\" & CaseNo
-                    End If
-                End If
+    '            'for next day
+    '            If FinalString.Trim = "" And dd < 31 Then
+    '                dd = dd + 1
+    '                If Directory.Exists("\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders10\" & yyyy & "\" & mm & "\" & dd & "\" & CaseNo) = True Then
+    '                    FinalString = "\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders10\" & yyyy & "\" & mm & "\" & dd & "\" & CaseNo
+    '                ElseIf Directory.Exists("\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders01\" & yyyy & "\" & mm & "\" & dd & "\" & CaseNo) = True Then
+    '                    FinalString = "\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders01\" & yyyy & "\" & mm & "\" & dd & "\" & CaseNo
+    '                ElseIf Directory.Exists("\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders02\" & yyyy & "\" & mm & "\" & dd & "\" & CaseNo) = True Then
+    '                    FinalString = "\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders02\" & yyyy & "\" & mm & "\" & dd & "\" & CaseNo
+    '                ElseIf Directory.Exists("\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders03\" & yyyy & "\" & mm & "\" & dd & "\" & CaseNo) = True Then
+    '                    FinalString = "\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders03\" & yyyy & "\" & mm & "\" & dd & "\" & CaseNo
+    '                ElseIf Directory.Exists("\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders04\" & yyyy & "\" & mm & "\" & dd & "\" & CaseNo) = True Then
+    '                    FinalString = "\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders04\" & yyyy & "\" & mm & "\" & dd & "\" & CaseNo
+    '                ElseIf Directory.Exists("\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders05\" & yyyy & "\" & mm & "\" & dd & "\" & CaseNo) = True Then
+    '                    FinalString = "\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders05\" & yyyy & "\" & mm & "\" & dd & "\" & CaseNo
+    '                ElseIf Directory.Exists("\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders06\" & yyyy & "\" & mm & "\" & dd & "\" & CaseNo) = True Then
+    '                    FinalString = "\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders06\" & yyyy & "\" & mm & "\" & dd & "\" & CaseNo
+    '                ElseIf Directory.Exists("\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders07\" & yyyy & "\" & mm & "\" & dd & "\" & CaseNo) = True Then
+    '                    FinalString = "\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders07\" & yyyy & "\" & mm & "\" & dd & "\" & CaseNo
+    '                ElseIf Directory.Exists("\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders08\" & yyyy & "\" & mm & "\" & dd & "\" & CaseNo) = True Then
+    '                    FinalString = "\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders08\" & yyyy & "\" & mm & "\" & dd & "\" & CaseNo
+    '                ElseIf Directory.Exists("\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders09\" & yyyy & "\" & mm & "\" & dd & "\" & CaseNo) = True Then
+    '                    FinalString = "\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders09\" & yyyy & "\" & mm & "\" & dd & "\" & CaseNo
+    '                ElseIf Directory.Exists("\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders\" & yyyy & "\" & mm & "\" & dd & "\" & CaseNo) = True Then
+    '                    FinalString = "\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders\" & yyyy & "\" & mm & "\" & dd & "\" & CaseNo
+    '                End If
+    '            End If
 
-                'for 2 next day
-                If FinalString.Trim = "" And dd < 30 Then
-                    dd = dd + 2
-                    If Directory.Exists("\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders10\" & yyyy & "\" & mm & "\" & dd & "\" & CaseNo) = True Then
-                        FinalString = "\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders10\" & yyyy & "\" & mm & "\" & dd & "\" & CaseNo
-                    ElseIf Directory.Exists("\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders01\" & yyyy & "\" & mm & "\" & dd & "\" & CaseNo) = True Then
-                        FinalString = "\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders01\" & yyyy & "\" & mm & "\" & dd & "\" & CaseNo
-                    ElseIf Directory.Exists("\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders02\" & yyyy & "\" & mm & "\" & dd & "\" & CaseNo) = True Then
-                        FinalString = "\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders02\" & yyyy & "\" & mm & "\" & dd & "\" & CaseNo
-                    ElseIf Directory.Exists("\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders03\" & yyyy & "\" & mm & "\" & dd & "\" & CaseNo) = True Then
-                        FinalString = "\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders03\" & yyyy & "\" & mm & "\" & dd & "\" & CaseNo
-                    ElseIf Directory.Exists("\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders04\" & yyyy & "\" & mm & "\" & dd & "\" & CaseNo) = True Then
-                        FinalString = "\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders04\" & yyyy & "\" & mm & "\" & dd & "\" & CaseNo
-                    ElseIf Directory.Exists("\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders05\" & yyyy & "\" & mm & "\" & dd & "\" & CaseNo) = True Then
-                        FinalString = "\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders05\" & yyyy & "\" & mm & "\" & dd & "\" & CaseNo
-                    ElseIf Directory.Exists("\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders06\" & yyyy & "\" & mm & "\" & dd & "\" & CaseNo) = True Then
-                        FinalString = "\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders06\" & yyyy & "\" & mm & "\" & dd & "\" & CaseNo
-                    ElseIf Directory.Exists("\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders07\" & yyyy & "\" & mm & "\" & dd & "\" & CaseNo) = True Then
-                        FinalString = "\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders07\" & yyyy & "\" & mm & "\" & dd & "\" & CaseNo
-                    ElseIf Directory.Exists("\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders08\" & yyyy & "\" & mm & "\" & dd & "\" & CaseNo) = True Then
-                        FinalString = "\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders08\" & yyyy & "\" & mm & "\" & dd & "\" & CaseNo
-                    ElseIf Directory.Exists("\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders09\" & yyyy & "\" & mm & "\" & dd & "\" & CaseNo) = True Then
-                        FinalString = "\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders09\" & yyyy & "\" & mm & "\" & dd & "\" & CaseNo
-                    ElseIf Directory.Exists("\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders\" & yyyy & "\" & mm & "\" & dd & "\" & CaseNo) = True Then
-                        FinalString = "\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders\" & yyyy & "\" & mm & "\" & dd & "\" & CaseNo
-                    End If
-                End If
 
-            End If
-            Return FinalString
-        Catch ex As Exception
-            MsgBox(ex.Message, MsgBoxStyle.Exclamation)
-            Return FinalString
-        End Try
-    End Function
+    '            'for 2 previous day
+    '            If FinalString.Trim = "" And dd > 2 Then
+    '                dd = dd - 2
+    '                If Directory.Exists("\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders10\" & yyyy & "\" & mm & "\" & dd & "\" & CaseNo) = True Then
+    '                    FinalString = "\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders10\" & yyyy & "\" & mm & "\" & dd & "\" & CaseNo
+    '                ElseIf Directory.Exists("\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders01\" & yyyy & "\" & mm & "\" & dd & "\" & CaseNo) = True Then
+    '                    FinalString = "\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders01\" & yyyy & "\" & mm & "\" & dd & "\" & CaseNo
+    '                ElseIf Directory.Exists("\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders02\" & yyyy & "\" & mm & "\" & dd & "\" & CaseNo) = True Then
+    '                    FinalString = "\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders02\" & yyyy & "\" & mm & "\" & dd & "\" & CaseNo
+    '                ElseIf Directory.Exists("\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders03\" & yyyy & "\" & mm & "\" & dd & "\" & CaseNo) = True Then
+    '                    FinalString = "\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders03\" & yyyy & "\" & mm & "\" & dd & "\" & CaseNo
+    '                ElseIf Directory.Exists("\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders04\" & yyyy & "\" & mm & "\" & dd & "\" & CaseNo) = True Then
+    '                    FinalString = "\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders04\" & yyyy & "\" & mm & "\" & dd & "\" & CaseNo
+    '                ElseIf Directory.Exists("\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders05\" & yyyy & "\" & mm & "\" & dd & "\" & CaseNo) = True Then
+    '                    FinalString = "\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders05\" & yyyy & "\" & mm & "\" & dd & "\" & CaseNo
+    '                ElseIf Directory.Exists("\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders06\" & yyyy & "\" & mm & "\" & dd & "\" & CaseNo) = True Then
+    '                    FinalString = "\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders06\" & yyyy & "\" & mm & "\" & dd & "\" & CaseNo
+    '                ElseIf Directory.Exists("\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders07\" & yyyy & "\" & mm & "\" & dd & "\" & CaseNo) = True Then
+    '                    FinalString = "\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders07\" & yyyy & "\" & mm & "\" & dd & "\" & CaseNo
+    '                ElseIf Directory.Exists("\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders08\" & yyyy & "\" & mm & "\" & dd & "\" & CaseNo) = True Then
+    '                    FinalString = "\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders08\" & yyyy & "\" & mm & "\" & dd & "\" & CaseNo
+    '                ElseIf Directory.Exists("\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders09\" & yyyy & "\" & mm & "\" & dd & "\" & CaseNo) = True Then
+    '                    FinalString = "\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders09\" & yyyy & "\" & mm & "\" & dd & "\" & CaseNo
+    '                ElseIf Directory.Exists("\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders\" & yyyy & "\" & mm & "\" & dd & "\" & CaseNo) = True Then
+    '                    FinalString = "\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders\" & yyyy & "\" & mm & "\" & dd & "\" & CaseNo
+    '                End If
+    '            End If
+
+    '            'for 2 next day
+    '            If FinalString.Trim = "" And dd < 30 Then
+    '                dd = dd + 2
+    '                If Directory.Exists("\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders10\" & yyyy & "\" & mm & "\" & dd & "\" & CaseNo) = True Then
+    '                    FinalString = "\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders10\" & yyyy & "\" & mm & "\" & dd & "\" & CaseNo
+    '                ElseIf Directory.Exists("\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders01\" & yyyy & "\" & mm & "\" & dd & "\" & CaseNo) = True Then
+    '                    FinalString = "\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders01\" & yyyy & "\" & mm & "\" & dd & "\" & CaseNo
+    '                ElseIf Directory.Exists("\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders02\" & yyyy & "\" & mm & "\" & dd & "\" & CaseNo) = True Then
+    '                    FinalString = "\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders02\" & yyyy & "\" & mm & "\" & dd & "\" & CaseNo
+    '                ElseIf Directory.Exists("\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders03\" & yyyy & "\" & mm & "\" & dd & "\" & CaseNo) = True Then
+    '                    FinalString = "\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders03\" & yyyy & "\" & mm & "\" & dd & "\" & CaseNo
+    '                ElseIf Directory.Exists("\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders04\" & yyyy & "\" & mm & "\" & dd & "\" & CaseNo) = True Then
+    '                    FinalString = "\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders04\" & yyyy & "\" & mm & "\" & dd & "\" & CaseNo
+    '                ElseIf Directory.Exists("\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders05\" & yyyy & "\" & mm & "\" & dd & "\" & CaseNo) = True Then
+    '                    FinalString = "\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders05\" & yyyy & "\" & mm & "\" & dd & "\" & CaseNo
+    '                ElseIf Directory.Exists("\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders06\" & yyyy & "\" & mm & "\" & dd & "\" & CaseNo) = True Then
+    '                    FinalString = "\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders06\" & yyyy & "\" & mm & "\" & dd & "\" & CaseNo
+    '                ElseIf Directory.Exists("\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders07\" & yyyy & "\" & mm & "\" & dd & "\" & CaseNo) = True Then
+    '                    FinalString = "\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders07\" & yyyy & "\" & mm & "\" & dd & "\" & CaseNo
+    '                ElseIf Directory.Exists("\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders08\" & yyyy & "\" & mm & "\" & dd & "\" & CaseNo) = True Then
+    '                    FinalString = "\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders08\" & yyyy & "\" & mm & "\" & dd & "\" & CaseNo
+    '                ElseIf Directory.Exists("\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders09\" & yyyy & "\" & mm & "\" & dd & "\" & CaseNo) = True Then
+    '                    FinalString = "\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders09\" & yyyy & "\" & mm & "\" & dd & "\" & CaseNo
+    '                ElseIf Directory.Exists("\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders\" & yyyy & "\" & mm & "\" & dd & "\" & CaseNo) = True Then
+    '                    FinalString = "\\partners.extranet.microsoft.com\mssolvefiles\SRDataFolders\" & yyyy & "\" & mm & "\" & dd & "\" & CaseNo
+    '                End If
+    '            End If
+
+    '        End If
+    '        Return FinalString
+    '    Catch ex As Exception
+    '        MsgBox(ex.Message, MsgBoxStyle.Exclamation)
+    '        Return FinalString
+    '    End Try
+    'End Function
 
 
     Function SetBytes(ByVal Bytes) As String
@@ -669,14 +676,6 @@ Public Class Common
     Friend Function getFileLocations() As String
         Dim Locations As String = ""
         Try
-            If Form1.DGCF.Rows.Count > 0 Then
-                Locations = "MSSolve customer files" & vbCrLf
-            End If
-
-            If Form1.DGFTP.Rows.Count > 0 Then
-                Locations = Locations & "FTP Workspace" & vbCrLf
-            End If
-
             If Form1.DGLocal.Rows.Count > 0 Then
                 Locations = Locations & Form1.lbllocal.Text.Trim & vbCrLf
             End If

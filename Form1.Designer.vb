@@ -37,27 +37,19 @@ Partial Class Form1
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim DataGridViewCellStyle101 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle102 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle103 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle104 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle105 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle106 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle107 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle108 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle109 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle110 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle111 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle112 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle113 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle114 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle115 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle116 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle117 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle118 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle119 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle120 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form1))
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle10 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle11 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle12 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.CMTV = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.OpenInNewTabToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.OpenFileToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -100,6 +92,8 @@ Partial Class Form1
         Me.TeamShareToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.FTPWorkspaceToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.HelpToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.AboutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.FeedbackToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripComboBox1 = New System.Windows.Forms.ToolStripComboBox()
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
         Me.DGAlert = New System.Windows.Forms.DataGridView()
@@ -110,14 +104,27 @@ Partial Class Form1
         Me.DGRemote = New System.Windows.Forms.DataGridView()
         Me.lbllocal = New System.Windows.Forms.TextBox()
         Me.DGLocal = New System.Windows.Forms.DataGridView()
-        Me.DGFTP = New System.Windows.Forms.DataGridView()
-        Me.DGCF = New System.Windows.Forms.DataGridView()
         Me.BtnTeamShare = New System.Windows.Forms.Button()
         Me.BtnOpendir = New System.Windows.Forms.Button()
-        Me.BtnOpenFtp = New System.Windows.Forms.Button()
-        Me.BtnOpenCF = New System.Windows.Forms.Button()
         Me.BtnTimer = New System.Windows.Forms.Button()
         Me.BtnMSSolve = New System.Windows.Forms.Button()
+        Me.BtnCopyNotes = New System.Windows.Forms.Button()
+        Me.BtnReset = New System.Windows.Forms.Button()
+        Me.BtnForeward = New System.Windows.Forms.Button()
+        Me.BtnrefreshPage = New System.Windows.Forms.Button()
+        Me.BtnPrevious = New System.Windows.Forms.Button()
+        Me.Btnmail = New System.Windows.Forms.Button()
+        Me.Btncopy = New System.Windows.Forms.Button()
+        Me.BtnNew = New System.Windows.Forms.Button()
+        Me.BtnHide = New System.Windows.Forms.Button()
+        Me.BtnDeleteCase = New System.Windows.Forms.Button()
+        Me.BtnAlert = New System.Windows.Forms.Button()
+        Me.Btnrefresh = New System.Windows.Forms.Button()
+        Me.Btnexit = New System.Windows.Forms.Button()
+        Me.Btnsetting = New System.Windows.Forms.Button()
+        Me.BtnOpenNotes = New System.Windows.Forms.Button()
+        Me.BtnDeletetemplate = New System.Windows.Forms.Button()
+        Me.BtnCreateTemplate = New System.Windows.Forms.Button()
         Me.ChkBullet = New System.Windows.Forms.CheckBox()
         Me.mnuBrowserTab = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.MnuCloseactivebrowser = New System.Windows.Forms.ToolStripMenuItem()
@@ -126,6 +133,7 @@ Partial Class Form1
         Me.PanelBB = New System.Windows.Forms.Panel()
         Me.SplitContainer1 = New System.Windows.Forms.SplitContainer()
         Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.PicAlert = New System.Windows.Forms.PictureBox()
         Me.TC1 = New System.Windows.Forms.TabControl()
         Me.TPTemplates = New System.Windows.Forms.TabPage()
         Me.TV = New System.Windows.Forms.TreeView()
@@ -137,46 +145,18 @@ Partial Class Form1
         Me.BtnCopyselected = New System.Windows.Forms.Button()
         Me.TBFile = New System.Windows.Forms.TabControl()
         Me.TPLocal = New System.Windows.Forms.TabPage()
-        Me.TPFTP = New System.Windows.Forms.TabPage()
-        Me.LblFTP = New System.Windows.Forms.TextBox()
-        Me.TPCF = New System.Windows.Forms.TabPage()
-        Me.LblCF = New System.Windows.Forms.TextBox()
+        Me.PBLS = New System.Windows.Forms.PictureBox()
         Me.TPTeam = New System.Windows.Forms.TabPage()
+        Me.PBPS = New System.Windows.Forms.PictureBox()
         Me.TCMain = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
         Me.TC = New System.Windows.Forms.TabControl()
-        Me.BtnCopyNotes = New System.Windows.Forms.Button()
-        Me.BtnReset = New System.Windows.Forms.Button()
-        Me.PicAlert = New System.Windows.Forms.PictureBox()
-        Me.PBLS = New System.Windows.Forms.PictureBox()
-        Me.PBFTP = New System.Windows.Forms.PictureBox()
-        Me.PBCF = New System.Windows.Forms.PictureBox()
-        Me.PBPS = New System.Windows.Forms.PictureBox()
-        Me.BtnForeward = New System.Windows.Forms.Button()
-        Me.BtnrefreshPage = New System.Windows.Forms.Button()
-        Me.BtnPrevious = New System.Windows.Forms.Button()
-        Me.Btnmail = New System.Windows.Forms.Button()
-        Me.Btncopy = New System.Windows.Forms.Button()
-        Me.BtnNew = New System.Windows.Forms.Button()
-        Me.AboutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.FeedbackToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.BtnHide = New System.Windows.Forms.Button()
-        Me.BtnDeleteCase = New System.Windows.Forms.Button()
-        Me.BtnAlert = New System.Windows.Forms.Button()
-        Me.Btnrefresh = New System.Windows.Forms.Button()
-        Me.Btnexit = New System.Windows.Forms.Button()
-        Me.Btnsetting = New System.Windows.Forms.Button()
-        Me.BtnOpenNotes = New System.Windows.Forms.Button()
-        Me.BtnDeletetemplate = New System.Windows.Forms.Button()
-        Me.BtnCreateTemplate = New System.Windows.Forms.Button()
         Me.CMTV.SuspendLayout()
         Me.TabCM.SuspendLayout()
         Me.MenuStrip1.SuspendLayout()
         CType(Me.DGAlert, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DGRemote, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DGLocal, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.DGFTP, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.DGCF, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.mnuBrowserTab.SuspendLayout()
         Me.PanelBB.SuspendLayout()
         CType(Me.SplitContainer1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -184,22 +164,18 @@ Partial Class Form1
         Me.SplitContainer1.Panel2.SuspendLayout()
         Me.SplitContainer1.SuspendLayout()
         Me.Panel3.SuspendLayout()
+        CType(Me.PicAlert, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TC1.SuspendLayout()
         Me.TPTemplates.SuspendLayout()
         Me.TPAlerts.SuspendLayout()
         Me.Panel1.SuspendLayout()
         Me.TBFile.SuspendLayout()
         Me.TPLocal.SuspendLayout()
-        Me.TPFTP.SuspendLayout()
-        Me.TPCF.SuspendLayout()
+        CType(Me.PBLS, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TPTeam.SuspendLayout()
+        CType(Me.PBPS, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TCMain.SuspendLayout()
         Me.TabPage1.SuspendLayout()
-        CType(Me.PicAlert, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PBLS, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PBFTP, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PBCF, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PBPS, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'CMTV
@@ -334,7 +310,7 @@ Partial Class Form1
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CaseToolStripMenuItem, Me.ActionToolStripMenuItem, Me.OpenToolStripMenuItem, Me.HelpToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(1461, 35)
+        Me.MenuStrip1.Size = New System.Drawing.Size(1461, 33)
         Me.MenuStrip1.TabIndex = 10
         Me.MenuStrip1.Text = "MenuStrip1"
         '
@@ -349,28 +325,28 @@ Partial Class Form1
         '
         Me.NewCaseToolStripMenuItem1.Image = Global.EasyNotes.My.Resources.Resources._New
         Me.NewCaseToolStripMenuItem1.Name = "NewCaseToolStripMenuItem1"
-        Me.NewCaseToolStripMenuItem1.Size = New System.Drawing.Size(270, 34)
+        Me.NewCaseToolStripMenuItem1.Size = New System.Drawing.Size(240, 34)
         Me.NewCaseToolStripMenuItem1.Text = "&New Case"
         '
         'NewTemplateToolStripMenuItem
         '
         Me.NewTemplateToolStripMenuItem.Image = Global.EasyNotes.My.Resources.Resources.CreateTemplate
         Me.NewTemplateToolStripMenuItem.Name = "NewTemplateToolStripMenuItem"
-        Me.NewTemplateToolStripMenuItem.Size = New System.Drawing.Size(270, 34)
+        Me.NewTemplateToolStripMenuItem.Size = New System.Drawing.Size(240, 34)
         Me.NewTemplateToolStripMenuItem.Text = "New &Template"
         '
         'DeleteTemplateToolStripMenuItem
         '
         Me.DeleteTemplateToolStripMenuItem.Image = Global.EasyNotes.My.Resources.Resources.DEleteTemplate
         Me.DeleteTemplateToolStripMenuItem.Name = "DeleteTemplateToolStripMenuItem"
-        Me.DeleteTemplateToolStripMenuItem.Size = New System.Drawing.Size(270, 34)
+        Me.DeleteTemplateToolStripMenuItem.Size = New System.Drawing.Size(240, 34)
         Me.DeleteTemplateToolStripMenuItem.Text = "&Delete Template"
         '
         'ExitToolStripMenuItem1
         '
         Me.ExitToolStripMenuItem1.Image = Global.EasyNotes.My.Resources.Resources.close
         Me.ExitToolStripMenuItem1.Name = "ExitToolStripMenuItem1"
-        Me.ExitToolStripMenuItem1.Size = New System.Drawing.Size(270, 34)
+        Me.ExitToolStripMenuItem1.Size = New System.Drawing.Size(240, 34)
         Me.ExitToolStripMenuItem1.Text = "E&xit"
         '
         'ActionToolStripMenuItem
@@ -384,70 +360,70 @@ Partial Class Form1
         '
         Me.CopyResourceToolStripMenuItem.Image = Global.EasyNotes.My.Resources.Resources.CopyResource
         Me.CopyResourceToolStripMenuItem.Name = "CopyResourceToolStripMenuItem"
-        Me.CopyResourceToolStripMenuItem.Size = New System.Drawing.Size(270, 34)
+        Me.CopyResourceToolStripMenuItem.Size = New System.Drawing.Size(248, 34)
         Me.CopyResourceToolStripMenuItem.Text = "&Copy Resource"
         '
         'SendMailToolStripMenuItem1
         '
         Me.SendMailToolStripMenuItem1.Image = Global.EasyNotes.My.Resources.Resources.mail
         Me.SendMailToolStripMenuItem1.Name = "SendMailToolStripMenuItem1"
-        Me.SendMailToolStripMenuItem1.Size = New System.Drawing.Size(270, 34)
+        Me.SendMailToolStripMenuItem1.Size = New System.Drawing.Size(248, 34)
         Me.SendMailToolStripMenuItem1.Text = "Send &Mail"
         '
         'RefreshToolStripMenuItem1
         '
         Me.RefreshToolStripMenuItem1.Image = Global.EasyNotes.My.Resources.Resources.Refresh
         Me.RefreshToolStripMenuItem1.Name = "RefreshToolStripMenuItem1"
-        Me.RefreshToolStripMenuItem1.Size = New System.Drawing.Size(270, 34)
+        Me.RefreshToolStripMenuItem1.Size = New System.Drawing.Size(248, 34)
         Me.RefreshToolStripMenuItem1.Text = "Re&fresh List"
         '
         'AlertToolStripMenuItem
         '
         Me.AlertToolStripMenuItem.Image = Global.EasyNotes.My.Resources.Resources.information
         Me.AlertToolStripMenuItem.Name = "AlertToolStripMenuItem"
-        Me.AlertToolStripMenuItem.Size = New System.Drawing.Size(270, 34)
+        Me.AlertToolStripMenuItem.Size = New System.Drawing.Size(248, 34)
         Me.AlertToolStripMenuItem.Text = "&Alert"
         '
         'SettingsToolStripMenuItem2
         '
         Me.SettingsToolStripMenuItem2.Image = Global.EasyNotes.My.Resources.Resources.settings
         Me.SettingsToolStripMenuItem2.Name = "SettingsToolStripMenuItem2"
-        Me.SettingsToolStripMenuItem2.Size = New System.Drawing.Size(270, 34)
+        Me.SettingsToolStripMenuItem2.Size = New System.Drawing.Size(248, 34)
         Me.SettingsToolStripMenuItem2.Text = "S&ettings"
         '
         'ManageCaseToolStripMenuItem
         '
         Me.ManageCaseToolStripMenuItem.Image = Global.EasyNotes.My.Resources.Resources.information
         Me.ManageCaseToolStripMenuItem.Name = "ManageCaseToolStripMenuItem"
-        Me.ManageCaseToolStripMenuItem.Size = New System.Drawing.Size(270, 34)
+        Me.ManageCaseToolStripMenuItem.Size = New System.Drawing.Size(248, 34)
         Me.ManageCaseToolStripMenuItem.Text = "Mana&ge Case"
         '
         'CloseTabToolStripMenuItem
         '
         Me.CloseTabToolStripMenuItem.Image = Global.EasyNotes.My.Resources.Resources.close
         Me.CloseTabToolStripMenuItem.Name = "CloseTabToolStripMenuItem"
-        Me.CloseTabToolStripMenuItem.Size = New System.Drawing.Size(270, 34)
+        Me.CloseTabToolStripMenuItem.Size = New System.Drawing.Size(248, 34)
         Me.CloseTabToolStripMenuItem.Text = "Cl&ose Tab"
         '
         'TimerStartStopToolStripMenuItem
         '
         Me.TimerStartStopToolStripMenuItem.Image = Global.EasyNotes.My.Resources.Resources.Watch
         Me.TimerStartStopToolStripMenuItem.Name = "TimerStartStopToolStripMenuItem"
-        Me.TimerStartStopToolStripMenuItem.Size = New System.Drawing.Size(270, 34)
+        Me.TimerStartStopToolStripMenuItem.Size = New System.Drawing.Size(248, 34)
         Me.TimerStartStopToolStripMenuItem.Text = "&Timer Start/Stop"
         '
         'DeleteCaseToolStripMenuItem
         '
         Me.DeleteCaseToolStripMenuItem.Image = Global.EasyNotes.My.Resources.Resources.DeleteAll
         Me.DeleteCaseToolStripMenuItem.Name = "DeleteCaseToolStripMenuItem"
-        Me.DeleteCaseToolStripMenuItem.Size = New System.Drawing.Size(270, 34)
+        Me.DeleteCaseToolStripMenuItem.Size = New System.Drawing.Size(248, 34)
         Me.DeleteCaseToolStripMenuItem.Text = "&Delete Case"
         '
         'ShowHidePanelToolStripMenuItem
         '
         Me.ShowHidePanelToolStripMenuItem.Image = Global.EasyNotes.My.Resources.Resources.ShowHide
         Me.ShowHidePanelToolStripMenuItem.Name = "ShowHidePanelToolStripMenuItem"
-        Me.ShowHidePanelToolStripMenuItem.Size = New System.Drawing.Size(270, 34)
+        Me.ShowHidePanelToolStripMenuItem.Size = New System.Drawing.Size(248, 34)
         Me.ShowHidePanelToolStripMenuItem.Text = "Show/Hide Panel"
         '
         'OpenToolStripMenuItem
@@ -462,28 +438,28 @@ Partial Class Form1
         '
         Me.CaseNotesToolStripMenuItem.Image = Global.EasyNotes.My.Resources.Resources.Download
         Me.CaseNotesToolStripMenuItem.Name = "CaseNotesToolStripMenuItem"
-        Me.CaseNotesToolStripMenuItem.Size = New System.Drawing.Size(270, 34)
+        Me.CaseNotesToolStripMenuItem.Size = New System.Drawing.Size(248, 34)
         Me.CaseNotesToolStripMenuItem.Text = "Local Case &Notes"
         '
         'OpenCaseDirectoryToolStripMenuItem
         '
         Me.OpenCaseDirectoryToolStripMenuItem.Image = Global.EasyNotes.My.Resources.Resources.Download
         Me.OpenCaseDirectoryToolStripMenuItem.Name = "OpenCaseDirectoryToolStripMenuItem"
-        Me.OpenCaseDirectoryToolStripMenuItem.Size = New System.Drawing.Size(270, 34)
+        Me.OpenCaseDirectoryToolStripMenuItem.Size = New System.Drawing.Size(248, 34)
         Me.OpenCaseDirectoryToolStripMenuItem.Text = "&Local Share"
         '
         'TeamShareToolStripMenuItem
         '
         Me.TeamShareToolStripMenuItem.Image = Global.EasyNotes.My.Resources.Resources.Download
         Me.TeamShareToolStripMenuItem.Name = "TeamShareToolStripMenuItem"
-        Me.TeamShareToolStripMenuItem.Size = New System.Drawing.Size(270, 34)
+        Me.TeamShareToolStripMenuItem.Size = New System.Drawing.Size(248, 34)
         Me.TeamShareToolStripMenuItem.Text = "&Team Share"
         '
         'FTPWorkspaceToolStripMenuItem
         '
         Me.FTPWorkspaceToolStripMenuItem.Image = Global.EasyNotes.My.Resources.Resources.Download
         Me.FTPWorkspaceToolStripMenuItem.Name = "FTPWorkspaceToolStripMenuItem"
-        Me.FTPWorkspaceToolStripMenuItem.Size = New System.Drawing.Size(270, 34)
+        Me.FTPWorkspaceToolStripMenuItem.Size = New System.Drawing.Size(248, 34)
         Me.FTPWorkspaceToolStripMenuItem.Text = "&FTP Workspace"
         '
         'HelpToolStripMenuItem
@@ -492,6 +468,20 @@ Partial Class Form1
         Me.HelpToolStripMenuItem.Name = "HelpToolStripMenuItem"
         Me.HelpToolStripMenuItem.Size = New System.Drawing.Size(65, 29)
         Me.HelpToolStripMenuItem.Text = "&Help"
+        '
+        'AboutToolStripMenuItem
+        '
+        Me.AboutToolStripMenuItem.Image = CType(resources.GetObject("AboutToolStripMenuItem.Image"), System.Drawing.Image)
+        Me.AboutToolStripMenuItem.Name = "AboutToolStripMenuItem"
+        Me.AboutToolStripMenuItem.Size = New System.Drawing.Size(189, 34)
+        Me.AboutToolStripMenuItem.Text = "About"
+        '
+        'FeedbackToolStripMenuItem
+        '
+        Me.FeedbackToolStripMenuItem.Image = CType(resources.GetObject("FeedbackToolStripMenuItem.Image"), System.Drawing.Image)
+        Me.FeedbackToolStripMenuItem.Name = "FeedbackToolStripMenuItem"
+        Me.FeedbackToolStripMenuItem.Size = New System.Drawing.Size(189, 34)
+        Me.FeedbackToolStripMenuItem.Text = "Feedback"
         '
         'ToolStripComboBox1
         '
@@ -516,43 +506,43 @@ Partial Class Form1
         Me.DGAlert.AllowUserToDeleteRows = False
         Me.DGAlert.AllowUserToOrderColumns = True
         Me.DGAlert.AllowUserToResizeRows = False
-        DataGridViewCellStyle101.BackColor = System.Drawing.Color.White
-        Me.DGAlert.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle101
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.White
+        Me.DGAlert.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
         Me.DGAlert.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.DGAlert.BackgroundColor = System.Drawing.Color.White
-        DataGridViewCellStyle102.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle102.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle102.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle102.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle102.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle102.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle102.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DGAlert.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle102
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DGAlert.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
         Me.DGAlert.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DGAlert.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Btn})
-        DataGridViewCellStyle103.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle103.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle103.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle103.ForeColor = System.Drawing.Color.Maroon
-        DataGridViewCellStyle103.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle103.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle103.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.DGAlert.DefaultCellStyle = DataGridViewCellStyle103
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.Maroon
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DGAlert.DefaultCellStyle = DataGridViewCellStyle3
         Me.DGAlert.Location = New System.Drawing.Point(-3, -3)
         Me.DGAlert.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.DGAlert.MultiSelect = False
         Me.DGAlert.Name = "DGAlert"
         Me.DGAlert.ReadOnly = True
-        DataGridViewCellStyle104.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle104.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle104.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle104.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle104.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle104.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle104.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DGAlert.RowHeadersDefaultCellStyle = DataGridViewCellStyle104
+        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle4.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DGAlert.RowHeadersDefaultCellStyle = DataGridViewCellStyle4
         Me.DGAlert.RowHeadersVisible = False
         Me.DGAlert.RowHeadersWidth = 62
         Me.DGAlert.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
@@ -616,7 +606,7 @@ Partial Class Form1
         Me.lblremote.Margin = New System.Windows.Forms.Padding(0)
         Me.lblremote.Name = "lblremote"
         Me.lblremote.ReadOnly = True
-        Me.lblremote.Size = New System.Drawing.Size(75045, 35)
+        Me.lblremote.Size = New System.Drawing.Size(65535, 23)
         Me.lblremote.TabIndex = 21
         Me.ToolTip1.SetToolTip(Me.lblremote, "Drag and drop your files directly in the grid below.")
         '
@@ -626,42 +616,42 @@ Partial Class Form1
         Me.DGRemote.AllowUserToAddRows = False
         Me.DGRemote.AllowUserToDeleteRows = False
         Me.DGRemote.AllowUserToOrderColumns = True
-        DataGridViewCellStyle105.BackColor = System.Drawing.Color.LightBlue
-        Me.DGRemote.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle105
+        DataGridViewCellStyle5.BackColor = System.Drawing.Color.LightBlue
+        Me.DGRemote.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle5
         Me.DGRemote.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.DGRemote.BackgroundColor = System.Drawing.Color.White
-        DataGridViewCellStyle106.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle106.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle106.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle106.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle106.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle106.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle106.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DGRemote.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle106
+        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle6.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DGRemote.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle6
         Me.DGRemote.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridViewCellStyle107.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle107.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle107.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle107.ForeColor = System.Drawing.Color.Maroon
-        DataGridViewCellStyle107.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle107.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle107.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.DGRemote.DefaultCellStyle = DataGridViewCellStyle107
+        DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle7.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle7.ForeColor = System.Drawing.Color.Maroon
+        DataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DGRemote.DefaultCellStyle = DataGridViewCellStyle7
         Me.DGRemote.Location = New System.Drawing.Point(-3, 22)
         Me.DGRemote.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.DGRemote.MultiSelect = False
         Me.DGRemote.Name = "DGRemote"
         Me.DGRemote.ReadOnly = True
-        DataGridViewCellStyle108.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle108.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle108.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle108.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle108.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle108.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle108.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DGRemote.RowHeadersDefaultCellStyle = DataGridViewCellStyle108
+        DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle8.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DGRemote.RowHeadersDefaultCellStyle = DataGridViewCellStyle8
         Me.DGRemote.RowHeadersVisible = False
         Me.DGRemote.RowHeadersWidth = 62
         Me.DGRemote.RowTemplate.ReadOnly = True
@@ -692,42 +682,42 @@ Partial Class Form1
         Me.DGLocal.AllowUserToAddRows = False
         Me.DGLocal.AllowUserToDeleteRows = False
         Me.DGLocal.AllowUserToOrderColumns = True
-        DataGridViewCellStyle109.BackColor = System.Drawing.Color.LightBlue
-        Me.DGLocal.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle109
+        DataGridViewCellStyle9.BackColor = System.Drawing.Color.LightBlue
+        Me.DGLocal.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle9
         Me.DGLocal.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.DGLocal.BackgroundColor = System.Drawing.Color.White
-        DataGridViewCellStyle110.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle110.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle110.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle110.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle110.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle110.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle110.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DGLocal.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle110
+        DataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle10.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DGLocal.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle10
         Me.DGLocal.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridViewCellStyle111.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle111.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle111.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle111.ForeColor = System.Drawing.Color.Maroon
-        DataGridViewCellStyle111.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle111.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle111.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.DGLocal.DefaultCellStyle = DataGridViewCellStyle111
+        DataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle11.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle11.ForeColor = System.Drawing.Color.Maroon
+        DataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DGLocal.DefaultCellStyle = DataGridViewCellStyle11
         Me.DGLocal.Location = New System.Drawing.Point(-3, 22)
         Me.DGLocal.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.DGLocal.MultiSelect = False
         Me.DGLocal.Name = "DGLocal"
         Me.DGLocal.ReadOnly = True
-        DataGridViewCellStyle112.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle112.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle112.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle112.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle112.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle112.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle112.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DGLocal.RowHeadersDefaultCellStyle = DataGridViewCellStyle112
+        DataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle12.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DGLocal.RowHeadersDefaultCellStyle = DataGridViewCellStyle12
         Me.DGLocal.RowHeadersVisible = False
         Me.DGLocal.RowHeadersWidth = 62
         Me.DGLocal.RowTemplate.ReadOnly = True
@@ -735,106 +725,6 @@ Partial Class Form1
         Me.DGLocal.Size = New System.Drawing.Size(415, 308)
         Me.DGLocal.TabIndex = 19
         Me.ToolTip1.SetToolTip(Me.DGLocal, "Drag and drop files here.")
-        '
-        'DGFTP
-        '
-        Me.DGFTP.AllowDrop = True
-        Me.DGFTP.AllowUserToAddRows = False
-        Me.DGFTP.AllowUserToDeleteRows = False
-        Me.DGFTP.AllowUserToOrderColumns = True
-        DataGridViewCellStyle113.BackColor = System.Drawing.Color.LightBlue
-        Me.DGFTP.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle113
-        Me.DGFTP.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.DGFTP.BackgroundColor = System.Drawing.Color.White
-        DataGridViewCellStyle114.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle114.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle114.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle114.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle114.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle114.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle114.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DGFTP.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle114
-        Me.DGFTP.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridViewCellStyle115.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle115.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle115.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle115.ForeColor = System.Drawing.Color.Maroon
-        DataGridViewCellStyle115.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle115.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle115.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.DGFTP.DefaultCellStyle = DataGridViewCellStyle115
-        Me.DGFTP.Location = New System.Drawing.Point(-3, 22)
-        Me.DGFTP.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.DGFTP.MultiSelect = False
-        Me.DGFTP.Name = "DGFTP"
-        Me.DGFTP.ReadOnly = True
-        DataGridViewCellStyle116.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle116.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle116.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle116.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle116.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle116.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle116.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DGFTP.RowHeadersDefaultCellStyle = DataGridViewCellStyle116
-        Me.DGFTP.RowHeadersVisible = False
-        Me.DGFTP.RowHeadersWidth = 62
-        Me.DGFTP.RowTemplate.ReadOnly = True
-        Me.DGFTP.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DGFTP.Size = New System.Drawing.Size(623, 462)
-        Me.DGFTP.TabIndex = 23
-        Me.ToolTip1.SetToolTip(Me.DGFTP, "Drag and drop files here.")
-        '
-        'DGCF
-        '
-        Me.DGCF.AllowDrop = True
-        Me.DGCF.AllowUserToAddRows = False
-        Me.DGCF.AllowUserToDeleteRows = False
-        Me.DGCF.AllowUserToOrderColumns = True
-        DataGridViewCellStyle117.BackColor = System.Drawing.Color.LightBlue
-        Me.DGCF.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle117
-        Me.DGCF.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.DGCF.BackgroundColor = System.Drawing.Color.White
-        DataGridViewCellStyle118.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle118.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle118.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle118.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle118.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle118.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle118.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DGCF.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle118
-        Me.DGCF.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridViewCellStyle119.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle119.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle119.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle119.ForeColor = System.Drawing.Color.Maroon
-        DataGridViewCellStyle119.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle119.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle119.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.DGCF.DefaultCellStyle = DataGridViewCellStyle119
-        Me.DGCF.Location = New System.Drawing.Point(-3, 22)
-        Me.DGCF.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.DGCF.MultiSelect = False
-        Me.DGCF.Name = "DGCF"
-        Me.DGCF.ReadOnly = True
-        DataGridViewCellStyle120.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle120.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle120.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle120.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle120.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle120.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle120.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DGCF.RowHeadersDefaultCellStyle = DataGridViewCellStyle120
-        Me.DGCF.RowHeadersVisible = False
-        Me.DGCF.RowHeadersWidth = 62
-        Me.DGCF.RowTemplate.ReadOnly = True
-        Me.DGCF.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DGCF.Size = New System.Drawing.Size(623, 462)
-        Me.DGCF.TabIndex = 25
-        Me.ToolTip1.SetToolTip(Me.DGCF, "Drag and drop files here.")
         '
         'BtnTeamShare
         '
@@ -865,34 +755,6 @@ Partial Class Form1
         Me.ToolTip1.SetToolTip(Me.BtnOpendir, "Open Local Case Directory")
         Me.BtnOpendir.UseVisualStyleBackColor = True
         '
-        'BtnOpenFtp
-        '
-        Me.BtnOpenFtp.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.BtnOpenFtp.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.BtnOpenFtp.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BtnOpenFtp.ForeColor = System.Drawing.Color.LightSteelBlue
-        Me.BtnOpenFtp.Location = New System.Drawing.Point(575, 0)
-        Me.BtnOpenFtp.Margin = New System.Windows.Forms.Padding(0)
-        Me.BtnOpenFtp.Name = "BtnOpenFtp"
-        Me.BtnOpenFtp.Size = New System.Drawing.Size(24, 25)
-        Me.BtnOpenFtp.TabIndex = 24
-        Me.ToolTip1.SetToolTip(Me.BtnOpenFtp, "Open FTP Workspace")
-        Me.BtnOpenFtp.UseVisualStyleBackColor = True
-        '
-        'BtnOpenCF
-        '
-        Me.BtnOpenCF.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.BtnOpenCF.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.BtnOpenCF.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BtnOpenCF.ForeColor = System.Drawing.Color.LightSteelBlue
-        Me.BtnOpenCF.Location = New System.Drawing.Point(575, 0)
-        Me.BtnOpenCF.Margin = New System.Windows.Forms.Padding(0)
-        Me.BtnOpenCF.Name = "BtnOpenCF"
-        Me.BtnOpenCF.Size = New System.Drawing.Size(24, 25)
-        Me.BtnOpenCF.TabIndex = 24
-        Me.ToolTip1.SetToolTip(Me.BtnOpenCF, "Open team share")
-        Me.BtnOpenCF.UseVisualStyleBackColor = True
-        '
         'BtnTimer
         '
         Me.BtnTimer.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
@@ -909,6 +771,7 @@ Partial Class Form1
         'BtnMSSolve
         '
         Me.BtnMSSolve.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.BtnMSSolve.BackgroundImage = Global.EasyNotes.My.Resources.Resources.ServiceDesk
         Me.BtnMSSolve.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.BtnMSSolve.Enabled = False
         Me.BtnMSSolve.FlatStyle = System.Windows.Forms.FlatStyle.Flat
@@ -919,6 +782,234 @@ Partial Class Form1
         Me.BtnMSSolve.TabIndex = 21
         Me.ToolTip1.SetToolTip(Me.BtnMSSolve, "Open this MSSolve case")
         Me.BtnMSSolve.UseVisualStyleBackColor = True
+        '
+        'BtnCopyNotes
+        '
+        Me.BtnCopyNotes.BackgroundImage = Global.EasyNotes.My.Resources.Resources.CopyResource
+        Me.BtnCopyNotes.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.BtnCopyNotes.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.BtnCopyNotes.Location = New System.Drawing.Point(562, 42)
+        Me.BtnCopyNotes.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.BtnCopyNotes.Name = "BtnCopyNotes"
+        Me.BtnCopyNotes.Size = New System.Drawing.Size(45, 46)
+        Me.BtnCopyNotes.TabIndex = 27
+        Me.ToolTip1.SetToolTip(Me.BtnCopyNotes, "Copy")
+        Me.BtnCopyNotes.UseVisualStyleBackColor = True
+        '
+        'BtnReset
+        '
+        Me.BtnReset.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.BtnReset.BackgroundImage = Global.EasyNotes.My.Resources.Resources.Watch
+        Me.BtnReset.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.BtnReset.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.BtnReset.ImageAlign = System.Drawing.ContentAlignment.TopLeft
+        Me.BtnReset.Location = New System.Drawing.Point(1101, 40)
+        Me.BtnReset.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.BtnReset.Name = "BtnReset"
+        Me.BtnReset.Size = New System.Drawing.Size(142, 46)
+        Me.BtnReset.TabIndex = 19
+        Me.BtnReset.Text = "           STOP"
+        Me.ToolTip1.SetToolTip(Me.BtnReset, "Reset the timer")
+        Me.BtnReset.UseVisualStyleBackColor = True
+        '
+        'BtnForeward
+        '
+        Me.BtnForeward.BackgroundImage = Global.EasyNotes.My.Resources.Resources.forward
+        Me.BtnForeward.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.BtnForeward.Enabled = False
+        Me.BtnForeward.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.BtnForeward.Location = New System.Drawing.Point(99, 0)
+        Me.BtnForeward.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.BtnForeward.Name = "BtnForeward"
+        Me.BtnForeward.Size = New System.Drawing.Size(45, 46)
+        Me.BtnForeward.TabIndex = 17
+        Me.ToolTip1.SetToolTip(Me.BtnForeward, "Go foreward")
+        Me.BtnForeward.UseVisualStyleBackColor = True
+        '
+        'BtnrefreshPage
+        '
+        Me.BtnrefreshPage.BackgroundImage = Global.EasyNotes.My.Resources.Resources.browser_refresh
+        Me.BtnrefreshPage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.BtnrefreshPage.Enabled = False
+        Me.BtnrefreshPage.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.BtnrefreshPage.Location = New System.Drawing.Point(52, 0)
+        Me.BtnrefreshPage.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.BtnrefreshPage.Name = "BtnrefreshPage"
+        Me.BtnrefreshPage.Size = New System.Drawing.Size(45, 46)
+        Me.BtnrefreshPage.TabIndex = 16
+        Me.ToolTip1.SetToolTip(Me.BtnrefreshPage, "Refresh web page")
+        Me.BtnrefreshPage.UseVisualStyleBackColor = True
+        '
+        'BtnPrevious
+        '
+        Me.BtnPrevious.BackgroundImage = Global.EasyNotes.My.Resources.Resources.back
+        Me.BtnPrevious.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.BtnPrevious.Enabled = False
+        Me.BtnPrevious.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.BtnPrevious.Location = New System.Drawing.Point(6, 0)
+        Me.BtnPrevious.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.BtnPrevious.Name = "BtnPrevious"
+        Me.BtnPrevious.Size = New System.Drawing.Size(45, 46)
+        Me.BtnPrevious.TabIndex = 15
+        Me.ToolTip1.SetToolTip(Me.BtnPrevious, "Go previous ")
+        Me.BtnPrevious.UseVisualStyleBackColor = True
+        '
+        'Btnmail
+        '
+        Me.Btnmail.BackgroundImage = Global.EasyNotes.My.Resources.Resources.mail
+        Me.Btnmail.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Btnmail.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.Btnmail.Location = New System.Drawing.Point(98, 42)
+        Me.Btnmail.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.Btnmail.Name = "Btnmail"
+        Me.Btnmail.Size = New System.Drawing.Size(45, 46)
+        Me.Btnmail.TabIndex = 4
+        Me.ToolTip1.SetToolTip(Me.Btnmail, "Send mail")
+        Me.Btnmail.UseVisualStyleBackColor = True
+        '
+        'Btncopy
+        '
+        Me.Btncopy.BackgroundImage = Global.EasyNotes.My.Resources.Resources.copy
+        Me.Btncopy.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Btncopy.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.Btncopy.Location = New System.Drawing.Point(51, 42)
+        Me.Btncopy.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.Btncopy.Name = "Btncopy"
+        Me.Btncopy.Size = New System.Drawing.Size(45, 46)
+        Me.Btncopy.TabIndex = 3
+        Me.ToolTip1.SetToolTip(Me.Btncopy, "Copy Resources")
+        Me.Btncopy.UseVisualStyleBackColor = True
+        '
+        'BtnNew
+        '
+        Me.BtnNew.BackgroundImage = CType(resources.GetObject("BtnNew.BackgroundImage"), System.Drawing.Image)
+        Me.BtnNew.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.BtnNew.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.BtnNew.ImageAlign = System.Drawing.ContentAlignment.TopLeft
+        Me.BtnNew.Location = New System.Drawing.Point(4, 42)
+        Me.BtnNew.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.BtnNew.Name = "BtnNew"
+        Me.BtnNew.Size = New System.Drawing.Size(45, 46)
+        Me.BtnNew.TabIndex = 2
+        Me.ToolTip1.SetToolTip(Me.BtnNew, "Enter a Case id")
+        Me.BtnNew.UseVisualStyleBackColor = True
+        '
+        'BtnHide
+        '
+        Me.BtnHide.BackgroundImage = CType(resources.GetObject("BtnHide.BackgroundImage"), System.Drawing.Image)
+        Me.BtnHide.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.BtnHide.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.BtnHide.Location = New System.Drawing.Point(516, 42)
+        Me.BtnHide.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.BtnHide.Name = "BtnHide"
+        Me.BtnHide.Size = New System.Drawing.Size(45, 46)
+        Me.BtnHide.TabIndex = 14
+        Me.ToolTip1.SetToolTip(Me.BtnHide, "Show/Hide Panel")
+        Me.BtnHide.UseVisualStyleBackColor = True
+        '
+        'BtnDeleteCase
+        '
+        Me.BtnDeleteCase.BackgroundImage = Global.EasyNotes.My.Resources.Resources.DeleteAll
+        Me.BtnDeleteCase.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.BtnDeleteCase.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.BtnDeleteCase.Location = New System.Drawing.Point(470, 42)
+        Me.BtnDeleteCase.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.BtnDeleteCase.Name = "BtnDeleteCase"
+        Me.BtnDeleteCase.Size = New System.Drawing.Size(45, 46)
+        Me.BtnDeleteCase.TabIndex = 13
+        Me.ToolTip1.SetToolTip(Me.BtnDeleteCase, "Delete the case notes and all related data and exit application.")
+        Me.BtnDeleteCase.UseVisualStyleBackColor = True
+        '
+        'BtnAlert
+        '
+        Me.BtnAlert.BackgroundImage = Global.EasyNotes.My.Resources.Resources.information
+        Me.BtnAlert.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.BtnAlert.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.BtnAlert.Location = New System.Drawing.Point(284, 42)
+        Me.BtnAlert.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.BtnAlert.Name = "BtnAlert"
+        Me.BtnAlert.Size = New System.Drawing.Size(45, 46)
+        Me.BtnAlert.TabIndex = 8
+        Me.ToolTip1.SetToolTip(Me.BtnAlert, "Create a reminder for this case")
+        Me.BtnAlert.UseVisualStyleBackColor = True
+        '
+        'Btnrefresh
+        '
+        Me.Btnrefresh.BackgroundImage = Global.EasyNotes.My.Resources.Resources.Refresh
+        Me.Btnrefresh.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Btnrefresh.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.Btnrefresh.Location = New System.Drawing.Point(330, 42)
+        Me.Btnrefresh.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.Btnrefresh.Name = "Btnrefresh"
+        Me.Btnrefresh.Size = New System.Drawing.Size(45, 46)
+        Me.Btnrefresh.TabIndex = 9
+        Me.ToolTip1.SetToolTip(Me.Btnrefresh, "Reload templates and resource list.")
+        Me.Btnrefresh.UseVisualStyleBackColor = True
+        '
+        'Btnexit
+        '
+        Me.Btnexit.BackgroundImage = Global.EasyNotes.My.Resources.Resources.close
+        Me.Btnexit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Btnexit.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.Btnexit.Location = New System.Drawing.Point(423, 42)
+        Me.Btnexit.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.Btnexit.Name = "Btnexit"
+        Me.Btnexit.Size = New System.Drawing.Size(45, 46)
+        Me.Btnexit.TabIndex = 11
+        Me.ToolTip1.SetToolTip(Me.Btnexit, "Close active Tab")
+        Me.Btnexit.UseVisualStyleBackColor = True
+        '
+        'Btnsetting
+        '
+        Me.Btnsetting.BackgroundImage = Global.EasyNotes.My.Resources.Resources.settings
+        Me.Btnsetting.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Btnsetting.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.Btnsetting.Location = New System.Drawing.Point(376, 42)
+        Me.Btnsetting.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.Btnsetting.Name = "Btnsetting"
+        Me.Btnsetting.Size = New System.Drawing.Size(45, 46)
+        Me.Btnsetting.TabIndex = 10
+        Me.ToolTip1.SetToolTip(Me.Btnsetting, "Settings")
+        Me.Btnsetting.UseVisualStyleBackColor = True
+        '
+        'BtnOpenNotes
+        '
+        Me.BtnOpenNotes.BackgroundImage = Global.EasyNotes.My.Resources.Resources.edit
+        Me.BtnOpenNotes.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.BtnOpenNotes.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.BtnOpenNotes.Location = New System.Drawing.Point(237, 42)
+        Me.BtnOpenNotes.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.BtnOpenNotes.Name = "BtnOpenNotes"
+        Me.BtnOpenNotes.Size = New System.Drawing.Size(45, 46)
+        Me.BtnOpenNotes.TabIndex = 7
+        Me.ToolTip1.SetToolTip(Me.BtnOpenNotes, "Manage Cases")
+        Me.BtnOpenNotes.UseVisualStyleBackColor = True
+        '
+        'BtnDeletetemplate
+        '
+        Me.BtnDeletetemplate.BackgroundImage = Global.EasyNotes.My.Resources.Resources.DEleteTemplate
+        Me.BtnDeletetemplate.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.BtnDeletetemplate.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.BtnDeletetemplate.Location = New System.Drawing.Point(190, 42)
+        Me.BtnDeletetemplate.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.BtnDeletetemplate.Name = "BtnDeletetemplate"
+        Me.BtnDeletetemplate.Size = New System.Drawing.Size(45, 46)
+        Me.BtnDeletetemplate.TabIndex = 6
+        Me.ToolTip1.SetToolTip(Me.BtnDeletetemplate, "Delete the selected template")
+        Me.BtnDeletetemplate.UseVisualStyleBackColor = True
+        '
+        'BtnCreateTemplate
+        '
+        Me.BtnCreateTemplate.BackgroundImage = Global.EasyNotes.My.Resources.Resources.CreateTemplate
+        Me.BtnCreateTemplate.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.BtnCreateTemplate.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.BtnCreateTemplate.Location = New System.Drawing.Point(144, 42)
+        Me.BtnCreateTemplate.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.BtnCreateTemplate.Name = "BtnCreateTemplate"
+        Me.BtnCreateTemplate.Size = New System.Drawing.Size(45, 46)
+        Me.BtnCreateTemplate.TabIndex = 5
+        Me.ToolTip1.SetToolTip(Me.BtnCreateTemplate, "Create Template")
+        Me.BtnCreateTemplate.UseVisualStyleBackColor = True
         '
         'ChkBullet
         '
@@ -985,7 +1076,7 @@ Partial Class Form1
         Me.SplitContainer1.BackColor = System.Drawing.SystemColors.Control
         Me.SplitContainer1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.SplitContainer1.Location = New System.Drawing.Point(2, 92)
-        Me.SplitContainer1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.SplitContainer1.Margin = New System.Windows.Forms.Padding(2)
         Me.SplitContainer1.Name = "SplitContainer1"
         '
         'SplitContainer1.Panel1
@@ -1019,6 +1110,19 @@ Partial Class Form1
         Me.Panel3.Name = "Panel3"
         Me.Panel3.Size = New System.Drawing.Size(413, 601)
         Me.Panel3.TabIndex = 27
+        '
+        'PicAlert
+        '
+        Me.PicAlert.BackgroundImage = Global.EasyNotes.My.Resources.Resources.alert_blink
+        Me.PicAlert.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.PicAlert.Location = New System.Drawing.Point(94, 84)
+        Me.PicAlert.Margin = New System.Windows.Forms.Padding(0)
+        Me.PicAlert.Name = "PicAlert"
+        Me.PicAlert.Size = New System.Drawing.Size(22, 23)
+        Me.PicAlert.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PicAlert.TabIndex = 25
+        Me.PicAlert.TabStop = False
+        Me.PicAlert.Visible = False
         '
         'TC1
         '
@@ -1139,8 +1243,6 @@ Partial Class Form1
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.TBFile.Controls.Add(Me.TPLocal)
-        Me.TBFile.Controls.Add(Me.TPFTP)
-        Me.TBFile.Controls.Add(Me.TPCF)
         Me.TBFile.Controls.Add(Me.TPTeam)
         Me.TBFile.Location = New System.Drawing.Point(0, 0)
         Me.TBFile.Margin = New System.Windows.Forms.Padding(0)
@@ -1164,63 +1266,17 @@ Partial Class Form1
         Me.TPLocal.Text = "Local Share"
         Me.TPLocal.UseVisualStyleBackColor = True
         '
-        'TPFTP
+        'PBLS
         '
-        Me.TPFTP.Controls.Add(Me.PBFTP)
-        Me.TPFTP.Controls.Add(Me.BtnOpenFtp)
-        Me.TPFTP.Controls.Add(Me.LblFTP)
-        Me.TPFTP.Controls.Add(Me.DGFTP)
-        Me.TPFTP.Location = New System.Drawing.Point(4, 29)
-        Me.TPFTP.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.TPFTP.Name = "TPFTP"
-        Me.TPFTP.Size = New System.Drawing.Size(411, 345)
-        Me.TPFTP.TabIndex = 2
-        Me.TPFTP.Text = "FTP"
-        Me.TPFTP.UseVisualStyleBackColor = True
-        '
-        'LblFTP
-        '
-        Me.LblFTP.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.LblFTP.BackColor = System.Drawing.Color.LightSteelBlue
-        Me.LblFTP.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.LblFTP.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LblFTP.ForeColor = System.Drawing.Color.Maroon
-        Me.LblFTP.Location = New System.Drawing.Point(0, 0)
-        Me.LblFTP.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.LblFTP.Name = "LblFTP"
-        Me.LblFTP.ReadOnly = True
-        Me.LblFTP.Size = New System.Drawing.Size(75045, 35)
-        Me.LblFTP.TabIndex = 22
-        '
-        'TPCF
-        '
-        Me.TPCF.Controls.Add(Me.PBCF)
-        Me.TPCF.Controls.Add(Me.BtnOpenCF)
-        Me.TPCF.Controls.Add(Me.LblCF)
-        Me.TPCF.Controls.Add(Me.DGCF)
-        Me.TPCF.Location = New System.Drawing.Point(4, 29)
-        Me.TPCF.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.TPCF.Name = "TPCF"
-        Me.TPCF.Size = New System.Drawing.Size(411, 345)
-        Me.TPCF.TabIndex = 3
-        Me.TPCF.Text = "Customer Files"
-        Me.TPCF.UseVisualStyleBackColor = True
-        '
-        'LblCF
-        '
-        Me.LblCF.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.LblCF.BackColor = System.Drawing.Color.LightSteelBlue
-        Me.LblCF.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.LblCF.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LblCF.ForeColor = System.Drawing.Color.Maroon
-        Me.LblCF.Location = New System.Drawing.Point(0, 0)
-        Me.LblCF.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.LblCF.Name = "LblCF"
-        Me.LblCF.ReadOnly = True
-        Me.LblCF.Size = New System.Drawing.Size(75045, 35)
-        Me.LblCF.TabIndex = 23
+        Me.PBLS.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.PBLS.Location = New System.Drawing.Point(340, 257)
+        Me.PBLS.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.PBLS.Name = "PBLS"
+        Me.PBLS.Size = New System.Drawing.Size(45, 46)
+        Me.PBLS.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PBLS.TabIndex = 23
+        Me.PBLS.TabStop = False
+        Me.PBLS.Visible = False
         '
         'TPTeam
         '
@@ -1236,6 +1292,18 @@ Partial Class Form1
         Me.TPTeam.Text = "Public Share"
         Me.TPTeam.UseVisualStyleBackColor = True
         '
+        'PBPS
+        '
+        Me.PBPS.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.PBPS.Location = New System.Drawing.Point(340, 257)
+        Me.PBPS.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.PBPS.Name = "PBPS"
+        Me.PBPS.Size = New System.Drawing.Size(45, 46)
+        Me.PBPS.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PBPS.TabIndex = 22
+        Me.PBPS.TabStop = False
+        Me.PBPS.Visible = False
+        '
         'TCMain
         '
         Me.TCMain.Alignment = System.Windows.Forms.TabAlignment.Bottom
@@ -1247,7 +1315,7 @@ Partial Class Form1
         Me.TCMain.Controls.Add(Me.TabPage1)
         Me.TCMain.HotTrack = True
         Me.TCMain.Location = New System.Drawing.Point(-8, -11)
-        Me.TCMain.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.TCMain.Margin = New System.Windows.Forms.Padding(2)
         Me.TCMain.Name = "TCMain"
         Me.TCMain.SelectedIndex = 0
         Me.TCMain.Size = New System.Drawing.Size(1054, 1033)
@@ -1280,309 +1348,6 @@ Partial Class Form1
         Me.TC.SelectedIndex = 0
         Me.TC.Size = New System.Drawing.Size(1055, 997)
         Me.TC.TabIndex = 28
-        '
-        'BtnCopyNotes
-        '
-        Me.BtnCopyNotes.BackgroundImage = Global.EasyNotes.My.Resources.Resources.CopyResource
-        Me.BtnCopyNotes.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.BtnCopyNotes.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.BtnCopyNotes.Location = New System.Drawing.Point(562, 42)
-        Me.BtnCopyNotes.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.BtnCopyNotes.Name = "BtnCopyNotes"
-        Me.BtnCopyNotes.Size = New System.Drawing.Size(45, 46)
-        Me.BtnCopyNotes.TabIndex = 27
-        Me.ToolTip1.SetToolTip(Me.BtnCopyNotes, "Copy")
-        Me.BtnCopyNotes.UseVisualStyleBackColor = True
-        '
-        'BtnReset
-        '
-        Me.BtnReset.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.BtnReset.BackgroundImage = Global.EasyNotes.My.Resources.Resources.Watch
-        Me.BtnReset.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
-        Me.BtnReset.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.BtnReset.ImageAlign = System.Drawing.ContentAlignment.TopLeft
-        Me.BtnReset.Location = New System.Drawing.Point(1101, 40)
-        Me.BtnReset.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.BtnReset.Name = "BtnReset"
-        Me.BtnReset.Size = New System.Drawing.Size(142, 46)
-        Me.BtnReset.TabIndex = 19
-        Me.BtnReset.Text = "           STOP"
-        Me.ToolTip1.SetToolTip(Me.BtnReset, "Reset the timer")
-        Me.BtnReset.UseVisualStyleBackColor = True
-        '
-        'PicAlert
-        '
-        Me.PicAlert.BackgroundImage = Global.EasyNotes.My.Resources.Resources.alert_blink
-        Me.PicAlert.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.PicAlert.Location = New System.Drawing.Point(94, 84)
-        Me.PicAlert.Margin = New System.Windows.Forms.Padding(0)
-        Me.PicAlert.Name = "PicAlert"
-        Me.PicAlert.Size = New System.Drawing.Size(22, 23)
-        Me.PicAlert.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PicAlert.TabIndex = 25
-        Me.PicAlert.TabStop = False
-        Me.PicAlert.Visible = False
-        '
-        'PBLS
-        '
-        Me.PBLS.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.PBLS.Location = New System.Drawing.Point(340, 257)
-        Me.PBLS.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.PBLS.Name = "PBLS"
-        Me.PBLS.Size = New System.Drawing.Size(45, 46)
-        Me.PBLS.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PBLS.TabIndex = 23
-        Me.PBLS.TabStop = False
-        Me.PBLS.Visible = False
-        '
-        'PBFTP
-        '
-        Me.PBFTP.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.PBFTP.Location = New System.Drawing.Point(340, 257)
-        Me.PBFTP.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.PBFTP.Name = "PBFTP"
-        Me.PBFTP.Size = New System.Drawing.Size(45, 46)
-        Me.PBFTP.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PBFTP.TabIndex = 25
-        Me.PBFTP.TabStop = False
-        Me.PBFTP.Visible = False
-        '
-        'PBCF
-        '
-        Me.PBCF.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.PBCF.Location = New System.Drawing.Point(340, 257)
-        Me.PBCF.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.PBCF.Name = "PBCF"
-        Me.PBCF.Size = New System.Drawing.Size(45, 46)
-        Me.PBCF.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PBCF.TabIndex = 26
-        Me.PBCF.TabStop = False
-        Me.PBCF.Visible = False
-        '
-        'PBPS
-        '
-        Me.PBPS.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.PBPS.Location = New System.Drawing.Point(340, 257)
-        Me.PBPS.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.PBPS.Name = "PBPS"
-        Me.PBPS.Size = New System.Drawing.Size(45, 46)
-        Me.PBPS.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PBPS.TabIndex = 22
-        Me.PBPS.TabStop = False
-        Me.PBPS.Visible = False
-        '
-        'BtnForeward
-        '
-        Me.BtnForeward.BackgroundImage = Global.EasyNotes.My.Resources.Resources.forward
-        Me.BtnForeward.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.BtnForeward.Enabled = False
-        Me.BtnForeward.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.BtnForeward.Location = New System.Drawing.Point(99, 0)
-        Me.BtnForeward.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.BtnForeward.Name = "BtnForeward"
-        Me.BtnForeward.Size = New System.Drawing.Size(45, 46)
-        Me.BtnForeward.TabIndex = 17
-        Me.ToolTip1.SetToolTip(Me.BtnForeward, "Go foreward")
-        Me.BtnForeward.UseVisualStyleBackColor = True
-        '
-        'BtnrefreshPage
-        '
-        Me.BtnrefreshPage.BackgroundImage = Global.EasyNotes.My.Resources.Resources.browser_refresh
-        Me.BtnrefreshPage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.BtnrefreshPage.Enabled = False
-        Me.BtnrefreshPage.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.BtnrefreshPage.Location = New System.Drawing.Point(52, 0)
-        Me.BtnrefreshPage.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.BtnrefreshPage.Name = "BtnrefreshPage"
-        Me.BtnrefreshPage.Size = New System.Drawing.Size(45, 46)
-        Me.BtnrefreshPage.TabIndex = 16
-        Me.ToolTip1.SetToolTip(Me.BtnrefreshPage, "Refresh web page")
-        Me.BtnrefreshPage.UseVisualStyleBackColor = True
-        '
-        'BtnPrevious
-        '
-        Me.BtnPrevious.BackgroundImage = Global.EasyNotes.My.Resources.Resources.back
-        Me.BtnPrevious.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.BtnPrevious.Enabled = False
-        Me.BtnPrevious.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.BtnPrevious.Location = New System.Drawing.Point(6, 0)
-        Me.BtnPrevious.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.BtnPrevious.Name = "BtnPrevious"
-        Me.BtnPrevious.Size = New System.Drawing.Size(45, 46)
-        Me.BtnPrevious.TabIndex = 15
-        Me.ToolTip1.SetToolTip(Me.BtnPrevious, "Go previous ")
-        Me.BtnPrevious.UseVisualStyleBackColor = True
-        '
-        'Btnmail
-        '
-        Me.Btnmail.BackgroundImage = Global.EasyNotes.My.Resources.Resources.mail
-        Me.Btnmail.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Btnmail.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.Btnmail.Location = New System.Drawing.Point(98, 42)
-        Me.Btnmail.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.Btnmail.Name = "Btnmail"
-        Me.Btnmail.Size = New System.Drawing.Size(45, 46)
-        Me.Btnmail.TabIndex = 4
-        Me.ToolTip1.SetToolTip(Me.Btnmail, "Send mail")
-        Me.Btnmail.UseVisualStyleBackColor = True
-        '
-        'Btncopy
-        '
-        Me.Btncopy.BackgroundImage = Global.EasyNotes.My.Resources.Resources.copy
-        Me.Btncopy.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Btncopy.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.Btncopy.Location = New System.Drawing.Point(51, 42)
-        Me.Btncopy.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.Btncopy.Name = "Btncopy"
-        Me.Btncopy.Size = New System.Drawing.Size(45, 46)
-        Me.Btncopy.TabIndex = 3
-        Me.ToolTip1.SetToolTip(Me.Btncopy, "Copy Resources")
-        Me.Btncopy.UseVisualStyleBackColor = True
-        '
-        'BtnNew
-        '
-        Me.BtnNew.BackgroundImage = CType(resources.GetObject("BtnNew.BackgroundImage"), System.Drawing.Image)
-        Me.BtnNew.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.BtnNew.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.BtnNew.ImageAlign = System.Drawing.ContentAlignment.TopLeft
-        Me.BtnNew.Location = New System.Drawing.Point(4, 42)
-        Me.BtnNew.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.BtnNew.Name = "BtnNew"
-        Me.BtnNew.Size = New System.Drawing.Size(45, 46)
-        Me.BtnNew.TabIndex = 2
-        Me.ToolTip1.SetToolTip(Me.BtnNew, "Enter a Case id")
-        Me.BtnNew.UseVisualStyleBackColor = True
-        '
-        'AboutToolStripMenuItem
-        '
-        Me.AboutToolStripMenuItem.Image = CType(resources.GetObject("AboutToolStripMenuItem.Image"), System.Drawing.Image)
-        Me.AboutToolStripMenuItem.Name = "AboutToolStripMenuItem"
-        Me.AboutToolStripMenuItem.Size = New System.Drawing.Size(270, 34)
-        Me.AboutToolStripMenuItem.Text = "About"
-        '
-        'FeedbackToolStripMenuItem
-        '
-        Me.FeedbackToolStripMenuItem.Image = CType(resources.GetObject("FeedbackToolStripMenuItem.Image"), System.Drawing.Image)
-        Me.FeedbackToolStripMenuItem.Name = "FeedbackToolStripMenuItem"
-        Me.FeedbackToolStripMenuItem.Size = New System.Drawing.Size(189, 34)
-        Me.FeedbackToolStripMenuItem.Text = "Feedback"
-        '
-        'BtnHide
-        '
-        Me.BtnHide.BackgroundImage = CType(resources.GetObject("BtnHide.BackgroundImage"), System.Drawing.Image)
-        Me.BtnHide.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.BtnHide.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.BtnHide.Location = New System.Drawing.Point(516, 42)
-        Me.BtnHide.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.BtnHide.Name = "BtnHide"
-        Me.BtnHide.Size = New System.Drawing.Size(45, 46)
-        Me.BtnHide.TabIndex = 14
-        Me.ToolTip1.SetToolTip(Me.BtnHide, "Show/Hide Panel")
-        Me.BtnHide.UseVisualStyleBackColor = True
-        '
-        'BtnDeleteCase
-        '
-        Me.BtnDeleteCase.BackgroundImage = Global.EasyNotes.My.Resources.Resources.DeleteAll
-        Me.BtnDeleteCase.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.BtnDeleteCase.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.BtnDeleteCase.Location = New System.Drawing.Point(470, 42)
-        Me.BtnDeleteCase.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.BtnDeleteCase.Name = "BtnDeleteCase"
-        Me.BtnDeleteCase.Size = New System.Drawing.Size(45, 46)
-        Me.BtnDeleteCase.TabIndex = 13
-        Me.ToolTip1.SetToolTip(Me.BtnDeleteCase, "Delete the case notes and all related data and exit application.")
-        Me.BtnDeleteCase.UseVisualStyleBackColor = True
-        '
-        'BtnAlert
-        '
-        Me.BtnAlert.BackgroundImage = Global.EasyNotes.My.Resources.Resources.information
-        Me.BtnAlert.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.BtnAlert.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.BtnAlert.Location = New System.Drawing.Point(284, 42)
-        Me.BtnAlert.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.BtnAlert.Name = "BtnAlert"
-        Me.BtnAlert.Size = New System.Drawing.Size(45, 46)
-        Me.BtnAlert.TabIndex = 8
-        Me.ToolTip1.SetToolTip(Me.BtnAlert, "Create a reminder for this case")
-        Me.BtnAlert.UseVisualStyleBackColor = True
-        '
-        'Btnrefresh
-        '
-        Me.Btnrefresh.BackgroundImage = Global.EasyNotes.My.Resources.Resources.Refresh
-        Me.Btnrefresh.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Btnrefresh.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.Btnrefresh.Location = New System.Drawing.Point(330, 42)
-        Me.Btnrefresh.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.Btnrefresh.Name = "Btnrefresh"
-        Me.Btnrefresh.Size = New System.Drawing.Size(45, 46)
-        Me.Btnrefresh.TabIndex = 9
-        Me.ToolTip1.SetToolTip(Me.Btnrefresh, "Reload templates and resource list.")
-        Me.Btnrefresh.UseVisualStyleBackColor = True
-        '
-        'Btnexit
-        '
-        Me.Btnexit.BackgroundImage = Global.EasyNotes.My.Resources.Resources.close
-        Me.Btnexit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Btnexit.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.Btnexit.Location = New System.Drawing.Point(423, 42)
-        Me.Btnexit.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.Btnexit.Name = "Btnexit"
-        Me.Btnexit.Size = New System.Drawing.Size(45, 46)
-        Me.Btnexit.TabIndex = 11
-        Me.ToolTip1.SetToolTip(Me.Btnexit, "Close active Tab")
-        Me.Btnexit.UseVisualStyleBackColor = True
-        '
-        'Btnsetting
-        '
-        Me.Btnsetting.BackgroundImage = Global.EasyNotes.My.Resources.Resources.settings
-        Me.Btnsetting.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Btnsetting.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.Btnsetting.Location = New System.Drawing.Point(376, 42)
-        Me.Btnsetting.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.Btnsetting.Name = "Btnsetting"
-        Me.Btnsetting.Size = New System.Drawing.Size(45, 46)
-        Me.Btnsetting.TabIndex = 10
-        Me.ToolTip1.SetToolTip(Me.Btnsetting, "Settings")
-        Me.Btnsetting.UseVisualStyleBackColor = True
-        '
-        'BtnOpenNotes
-        '
-        Me.BtnOpenNotes.BackgroundImage = Global.EasyNotes.My.Resources.Resources.edit
-        Me.BtnOpenNotes.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.BtnOpenNotes.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.BtnOpenNotes.Location = New System.Drawing.Point(237, 42)
-        Me.BtnOpenNotes.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.BtnOpenNotes.Name = "BtnOpenNotes"
-        Me.BtnOpenNotes.Size = New System.Drawing.Size(45, 46)
-        Me.BtnOpenNotes.TabIndex = 7
-        Me.ToolTip1.SetToolTip(Me.BtnOpenNotes, "Manage Cases")
-        Me.BtnOpenNotes.UseVisualStyleBackColor = True
-        '
-        'BtnDeletetemplate
-        '
-        Me.BtnDeletetemplate.BackgroundImage = Global.EasyNotes.My.Resources.Resources.DEleteTemplate
-        Me.BtnDeletetemplate.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.BtnDeletetemplate.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.BtnDeletetemplate.Location = New System.Drawing.Point(190, 42)
-        Me.BtnDeletetemplate.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.BtnDeletetemplate.Name = "BtnDeletetemplate"
-        Me.BtnDeletetemplate.Size = New System.Drawing.Size(45, 46)
-        Me.BtnDeletetemplate.TabIndex = 6
-        Me.ToolTip1.SetToolTip(Me.BtnDeletetemplate, "Delete the selected template")
-        Me.BtnDeletetemplate.UseVisualStyleBackColor = True
-        '
-        'BtnCreateTemplate
-        '
-        Me.BtnCreateTemplate.BackgroundImage = Global.EasyNotes.My.Resources.Resources.CreateTemplate
-        Me.BtnCreateTemplate.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.BtnCreateTemplate.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.BtnCreateTemplate.Location = New System.Drawing.Point(144, 42)
-        Me.BtnCreateTemplate.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.BtnCreateTemplate.Name = "BtnCreateTemplate"
-        Me.BtnCreateTemplate.Size = New System.Drawing.Size(45, 46)
-        Me.BtnCreateTemplate.TabIndex = 5
-        Me.ToolTip1.SetToolTip(Me.BtnCreateTemplate, "Create Template")
-        Me.BtnCreateTemplate.UseVisualStyleBackColor = True
         '
         'Form1
         '
@@ -1624,8 +1389,6 @@ Partial Class Form1
         CType(Me.DGAlert, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DGRemote, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DGLocal, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.DGFTP, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.DGCF, System.ComponentModel.ISupportInitialize).EndInit()
         Me.mnuBrowserTab.ResumeLayout(False)
         Me.PanelBB.ResumeLayout(False)
         Me.SplitContainer1.Panel1.ResumeLayout(False)
@@ -1634,6 +1397,7 @@ Partial Class Form1
         Me.SplitContainer1.ResumeLayout(False)
         Me.Panel3.ResumeLayout(False)
         Me.Panel3.PerformLayout()
+        CType(Me.PicAlert, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TC1.ResumeLayout(False)
         Me.TPTemplates.ResumeLayout(False)
         Me.TPAlerts.ResumeLayout(False)
@@ -1641,19 +1405,12 @@ Partial Class Form1
         Me.TBFile.ResumeLayout(False)
         Me.TPLocal.ResumeLayout(False)
         Me.TPLocal.PerformLayout()
-        Me.TPFTP.ResumeLayout(False)
-        Me.TPFTP.PerformLayout()
-        Me.TPCF.ResumeLayout(False)
-        Me.TPCF.PerformLayout()
+        CType(Me.PBLS, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TPTeam.ResumeLayout(False)
         Me.TPTeam.PerformLayout()
+        CType(Me.PBPS, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TCMain.ResumeLayout(False)
         Me.TabPage1.ResumeLayout(False)
-        CType(Me.PicAlert, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PBLS, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PBFTP, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PBCF, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PBPS, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -1756,16 +1513,6 @@ Partial Class Form1
     Friend WithEvents BtnOpendir As System.Windows.Forms.Button
     Friend WithEvents lbllocal As System.Windows.Forms.TextBox
     Friend WithEvents DGLocal As System.Windows.Forms.DataGridView
-    Friend WithEvents TPFTP As System.Windows.Forms.TabPage
-    Friend WithEvents PBFTP As System.Windows.Forms.PictureBox
-    Friend WithEvents BtnOpenFtp As System.Windows.Forms.Button
-    Friend WithEvents LblFTP As System.Windows.Forms.TextBox
-    Friend WithEvents DGFTP As System.Windows.Forms.DataGridView
-    Friend WithEvents TPCF As System.Windows.Forms.TabPage
-    Friend WithEvents PBCF As System.Windows.Forms.PictureBox
-    Friend WithEvents BtnOpenCF As System.Windows.Forms.Button
-    Friend WithEvents LblCF As System.Windows.Forms.TextBox
-    Friend WithEvents DGCF As System.Windows.Forms.DataGridView
     Friend WithEvents TCMain As System.Windows.Forms.TabControl
     Friend WithEvents TabPage1 As System.Windows.Forms.TabPage
     Friend WithEvents TC As System.Windows.Forms.TabControl

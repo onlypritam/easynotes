@@ -218,25 +218,25 @@ Public Class Form1
 
 
 
-            '-----DTFTP---------------
-            DTFTP.Rows.Clear()
-            DTFTP.Columns.Clear()
-            Dim cx As New DataColumn("FileName")
-            Dim cy As New DataColumn("FilePath")
-            Dim cz As New DataColumn("FileSize")
-            DTFTP.Columns.Add(cx)
-            DTFTP.Columns.Add(cy)
-            DTFTP.Columns.Add(cz)
+            ''-----DTFTP---------------
+            'DTFTP.Rows.Clear()
+            'DTFTP.Columns.Clear()
+            'Dim cx As New DataColumn("FileName")
+            'Dim cy As New DataColumn("FilePath")
+            'Dim cz As New DataColumn("FileSize")
+            'DTFTP.Columns.Add(cx)
+            'DTFTP.Columns.Add(cy)
+            'DTFTP.Columns.Add(cz)
 
-            '-----DTCustomerFile---------------
-            DTCF.Rows.Clear()
-            DTCF.Columns.Clear()
-            Dim ci As New DataColumn("FileName")
-            Dim cj As New DataColumn("FilePath")
-            Dim ck As New DataColumn("FileSize")
-            DTCF.Columns.Add(ci)
-            DTCF.Columns.Add(cj)
-            DTCF.Columns.Add(ck)
+            ''-----DTCustomerFile---------------
+            'DTCF.Rows.Clear()
+            'DTCF.Columns.Clear()
+            'Dim ci As New DataColumn("FileName")
+            'Dim cj As New DataColumn("FilePath")
+            'Dim ck As New DataColumn("FileSize")
+            'DTCF.Columns.Add(ci)
+            'DTCF.Columns.Add(cj)
+            'DTCF.Columns.Add(ck)
 
 
             '----DTLocal---------------
@@ -291,71 +291,71 @@ Public Class Form1
 
 
             '-----DTCustomerFile---------------
-            Try
-                If common.IsMSSolveCase = True Then
+            'Try
+            '    If common.IsMSSolveCase = True Then
 
-                    Dim cf As String
-                    cf = common.getCustomerFilePath
+            '        Dim cf As String
+            '        cf = common.getCustomerFilePath
 
-                    If cf <> "" Then
+            '        If cf <> "" Then
 
-                        CFLocation = cf
+            '            CFLocation = cf
 
-                        Dim SFileList As ObjectModel.ReadOnlyCollection(Of String)
-                        'SFileList = My.Computer.FileSystem.GetFiles(common.getCustomerFilePath, FileIO.SearchOption.SearchAllSubDirectories)
-                        SFileList = My.Computer.FileSystem.GetFiles(CFLocation, FileIO.SearchOption.SearchAllSubDirectories)
-                        DTCF.Rows.Clear()
-                        Me.DTCF = DTCF.Copy()
-                        For Each Files As String In SFileList
-                            Dim Fl As New FileInfo(Files)
-                            Dim dr2 As DataRow = DTCF.NewRow
-                            dr2.Item(0) = Fl.Name.ToString
-                            dr2.Item(1) = Files
-                            dr2.Item(2) = common.GetFileSize(Fl.Length) 'Math.Round(Fl.Length / 1024) & " (KB)"
+            '            Dim SFileList As ObjectModel.ReadOnlyCollection(Of String)
+            '            'SFileList = My.Computer.FileSystem.GetFiles(common.getCustomerFilePath, FileIO.SearchOption.SearchAllSubDirectories)
+            '            SFileList = My.Computer.FileSystem.GetFiles(CFLocation, FileIO.SearchOption.SearchAllSubDirectories)
+            '            DTCF.Rows.Clear()
+            '            Me.DTCF = DTCF.Copy()
+            '            For Each Files As String In SFileList
+            '                Dim Fl As New FileInfo(Files)
+            '                Dim dr2 As DataRow = DTCF.NewRow
+            '                dr2.Item(0) = Fl.Name.ToString
+            '                dr2.Item(1) = Files
+            '                dr2.Item(2) = common.GetFileSize(Fl.Length) 'Math.Round(Fl.Length / 1024) & " (KB)"
 
-                            DTCF.Rows.Add(dr2)
-                        Next
-                    End If
-                    Me.DTCF = DTCF.Copy()
-                Else
-                    DTCF.Rows.Clear()
-                    Me.DTCF = DTCF.Copy()
-                End If
-                common.PBCF = False
-            Catch ex As Exception
-                common.PBCF = False
-                If ex.Message.ToString.Contains("Could not find a part of the path") = False And ex.Message.ToString.Contains("The network path was not found") = False Then
-                    MsgBox("Error with Customer files : " & ex.Message, MsgBoxStyle.Exclamation)
-                End If
-            End Try
+            '                DTCF.Rows.Add(dr2)
+            '            Next
+            '        End If
+            '        Me.DTCF = DTCF.Copy()
+            '    Else
+            '        DTCF.Rows.Clear()
+            '        Me.DTCF = DTCF.Copy()
+            '    End If
+            '    common.PBCF = False
+            'Catch ex As Exception
+            '    common.PBCF = False
+            '    If ex.Message.ToString.Contains("Could not find a part of the path") = False And ex.Message.ToString.Contains("The network path was not found") = False Then
+            '        MsgBox("Error with Customer files : " & ex.Message, MsgBoxStyle.Exclamation)
+            '    End If
+            'End Try
 
             '----DTFTP---------------
-            Try
-                Dim FTPPath As String = common.GetFTPInternalDirectory(common.CaseNo)
+            'Try
+            '    Dim FTPPath As String = common.GetFTPInternalDirectory(common.CaseNo)
 
-                If FTPPath <> "" Then ' checking if the ftp workspace exists
-                    FTPLocation = FTPPath ' setting the value, it will be set by timer
-                    Dim FFileList As ObjectModel.ReadOnlyCollection(Of String)
-                    FFileList = My.Computer.FileSystem.GetFiles(FTPPath, FileIO.SearchOption.SearchAllSubDirectories)
+            '    If FTPPath <> "" Then ' checking if the ftp workspace exists
+            '        FTPLocation = FTPPath ' setting the value, it will be set by timer
+            '        Dim FFileList As ObjectModel.ReadOnlyCollection(Of String)
+            '        FFileList = My.Computer.FileSystem.GetFiles(FTPPath, FileIO.SearchOption.SearchAllSubDirectories)
 
-                    DTFTP.Rows.Clear()
-                    For Each Files As String In FFileList
-                        Dim Fl As New FileInfo(Files)
-                        Dim drl As DataRow = DTFTP.NewRow
-                        drl.Item(0) = Fl.Name.ToString
-                        drl.Item(1) = Files
-                        drl.Item(2) = common.GetFileSize(Fl.Length) ' Math.Round(Fl.Length / 1024) & " (KB)"
-                        DTFTP.Rows.Add(drl)
-                    Next
-                End If
-                Me.DTFTP = DTFTP.Copy()
-                common.PBFTP = False
-            Catch ex As Exception
-                common.PBFTP = False
-                If ex.Message.ToString.Contains("Could not find a part of the path") = False And ex.Message.ToString.Contains("The network path was not found") = False And ex.Message.ToString.Contains("The remote server returned an error") = False Then
-                    MsgBox("Error with FTP server : " & ex.Message, MsgBoxStyle.Exclamation)
-                End If
-            End Try
+            '        DTFTP.Rows.Clear()
+            '        For Each Files As String In FFileList
+            '            Dim Fl As New FileInfo(Files)
+            '            Dim drl As DataRow = DTFTP.NewRow
+            '            drl.Item(0) = Fl.Name.ToString
+            '            drl.Item(1) = Files
+            '            drl.Item(2) = common.GetFileSize(Fl.Length) ' Math.Round(Fl.Length / 1024) & " (KB)"
+            '            DTFTP.Rows.Add(drl)
+            '        Next
+            '    End If
+            '    Me.DTFTP = DTFTP.Copy()
+            '    common.PBFTP = False
+            'Catch ex As Exception
+            '    common.PBFTP = False
+            '    If ex.Message.ToString.Contains("Could not find a part of the path") = False And ex.Message.ToString.Contains("The network path was not found") = False And ex.Message.ToString.Contains("The remote server returned an error") = False Then
+            '        MsgBox("Error with FTP server : " & ex.Message, MsgBoxStyle.Exclamation)
+            '    End If
+            'End Try
         Catch ex As Exception
             MsgBox(ex.Message, MsgBoxStyle.Exclamation)
         Finally
@@ -815,12 +815,12 @@ Public Class Form1
                 If common.PBLS = True Then
                     PBLS.Visible = True
                 End If
-                If common.PBCF = True Then
-                    PBCF.Visible = True
-                End If
-                If common.PBFTP = True Then
-                    PBFTP.Visible = True
-                End If
+                'If common.PBCF = True Then
+                '    PBCF.Visible = True
+                'End If
+                'If common.PBFTP = True Then
+                '    PBFTP.Visible = True
+                'End If
             End If
 
 
@@ -839,10 +839,10 @@ Public Class Form1
 
                 DGLocal.DataSource = DTLocal
                 DGRemote.DataSource = DTRemote
-                DGCF.DataSource = DTCF
-                DGFTP.DataSource = DTFTP
-                LblFTP.Text = FTPLocation
-                LblCF.Text = CFLocation
+                'DGCF.DataSource = DTCF
+                'DGFTP.DataSource = DTFTP
+                'LblFTP.Text = FTPLocation
+                'LblCF.Text = CFLocation
 
 
 
@@ -852,12 +852,12 @@ Public Class Form1
                 If common.PBLS = False Then
                     PBLS.Visible = False
                 End If
-                If common.PBCF = False Then
-                    PBCF.Visible = False
-                End If
-                If common.PBFTP = False Then
-                    PBFTP.Visible = False
-                End If
+                'If common.PBCF = False Then
+                '    PBCF.Visible = False
+                'End If
+                'If common.PBFTP = False Then
+                '    PBFTP.Visible = False
+                'End If
 
 
                 'Try 'so that these lines does not throws an error in case of cases with lots of files
@@ -1151,10 +1151,10 @@ Public Class Form1
         End Try
     End Sub
 
-    Private Sub BtnOpenFtp_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnOpenFtp.Click
+    Private Sub BtnOpenFtp_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
         Try
             Cursor.Current = Cursors.WaitCursor
-            If common.IsCaseNo(common.CaseNo.Trim) = False Then
+            If common.IsCaseNo(Common.CaseNo.Trim) = False Then
                 MsgBox("Please specify a valid case no.", MsgBoxStyle.Information)
                 Exit Sub
             Else
@@ -1185,16 +1185,16 @@ Public Class Form1
 
     Private Sub BtnOpenNotes_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnOpenNotes.Click
         Try
-            
+
 
             Dim Cleanoldcases As New CleanOldCases
             Cleanoldcases.ShowDialog()
 
-                '------Writing log ------------------
-                common.ExtraDataToLog = "Manage cases"
-                Dim WL As New Threading.Thread(AddressOf common.WriteLog)
-                WL.Start()
-                '------------------------------------
+            '------Writing log ------------------
+            Common.ExtraDataToLog = "Manage cases"
+            Dim WL As New Threading.Thread(AddressOf common.WriteLog)
+            WL.Start()
+            '------------------------------------
 
 
 
@@ -1211,13 +1211,13 @@ Public Class Form1
 
     Private Sub BtnCreateTemplate_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnCreateTemplate.Click
         Try
-            If My.Computer.FileSystem.DirectoryExists(common.TemplateRoot) Then
+            If My.Computer.FileSystem.DirectoryExists(Common.TemplateRoot) Then
                 Dim CT As New CreateTemplate
                 CT.ShowDialog()
             End If
 
             '------Writing log ------------------
-            common.ExtraDataToLog = "Create template from toolbar"
+            Common.ExtraDataToLog = "Create template from toolbar"
             Dim WL As New Threading.Thread(AddressOf common.WriteLog)
             WL.Start()
             '------------------------------------
@@ -1228,7 +1228,7 @@ Public Class Form1
     End Sub
 
     Private Sub TxtCaseNotes_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs)
-        common.AllDataSaved = False
+        Common.AllDataSaved = False
     End Sub
 
     Private Sub BtnDeletetemplate_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnDeletetemplate.Click
@@ -1236,10 +1236,10 @@ Public Class Form1
             Dim pth As String
             If TV.SelectedNode.Level = 1 Then
                 If TV.SelectedNode.Text.EndsWith("<External>") Then
-                    pth = common.TemplateRoot & "\" & TV.SelectedNode.Parent.Name.ToString & "\" & TV.SelectedNode.Text
+                    pth = Common.TemplateRoot & "\" & TV.SelectedNode.Parent.Name.ToString & "\" & TV.SelectedNode.Text
                     pth = pth.Substring(0, pth.LastIndexOf("<External>")) & ".msg"
                 Else
-                    pth = common.TemplateRoot & "\" & TV.SelectedNode.Parent.Name.ToString & "\" & TV.SelectedNode.Text & ".txt"
+                    pth = Common.TemplateRoot & "\" & TV.SelectedNode.Parent.Name.ToString & "\" & TV.SelectedNode.Text & ".txt"
                 End If
 
                 If My.Computer.FileSystem.FileExists(pth) = False Then
@@ -1254,7 +1254,7 @@ Public Class Form1
                 Btnrefresh_Click(sender, e)
 
                 '------Writing log ------------------
-                common.ExtraDataToLog = "Delete Template"
+                Common.ExtraDataToLog = "Delete Template"
                 Dim WL As New Threading.Thread(AddressOf common.WriteLog)
                 WL.Start()
                 '------------------------------------
@@ -1263,13 +1263,13 @@ Public Class Form1
                 'End If
             ElseIf TV.SelectedNode.Level = 0 Then
 
-                If My.Computer.FileSystem.DirectoryExists(common.TemplateRoot & "\" & TV.SelectedNode.Text) = False Then
+                If My.Computer.FileSystem.DirectoryExists(Common.TemplateRoot & "\" & TV.SelectedNode.Text) = False Then
                     MsgBox("This Group does not exists.", MsgBoxStyle.Critical)
                     Exit Sub
                 End If
 
                 If MsgBox("Are you sure you want to delete this Template Group? All the templates inside group will be deleted as well.", MsgBoxStyle.Question + MsgBoxStyle.YesNo) = MsgBoxResult.Yes Then
-                    My.Computer.FileSystem.DeleteDirectory(common.TemplateRoot & "\" & TV.SelectedNode.Text, FileIO.DeleteDirectoryOption.DeleteAllContents)
+                    My.Computer.FileSystem.DeleteDirectory(Common.TemplateRoot & "\" & TV.SelectedNode.Text, FileIO.DeleteDirectoryOption.DeleteAllContents)
                 End If
 
                 Btnrefresh_Click(sender, e)
@@ -1303,7 +1303,7 @@ Public Class Form1
             OpenMail()
 
             '------Writing log ------------------
-            common.ExtraDataToLog = "Mail for Case no - " & common.CaseNo
+            Common.ExtraDataToLog = "Mail for Case no - " & Common.CaseNo
             Dim WL As New Threading.Thread(AddressOf common.WriteLog)
             WL.Start()
             '------------------------------------
@@ -1321,12 +1321,12 @@ Public Class Form1
 
 
             If common.IsClarifyCase = True Then
-                MI.To = common.GetCaseAttribute("Email", common.CaseNo)
-                MI.Subject = "Microsoft Support Case " & common.CaseNo
+                MI.To = common.GetCaseAttribute("Email", Common.CaseNo)
+                MI.Subject = "Microsoft Support Case " & Common.CaseNo
                 MI.CC = "compmail@microsoft.com"
             ElseIf common.IsMSSolveCase = True Then
-                MI.To = common.GetCaseAttribute("Email", common.CaseNo)
-                MI.Subject = " " & common.CaseNo.ToString.Substring(0, 15) & " " '[REG:109041063115314] 
+                MI.To = common.GetCaseAttribute("Email", Common.CaseNo)
+                MI.Subject = " " & Common.CaseNo.ToString.Substring(0, 15) & " " '[REG:109041063115314] 
                 'MI.To = common.CustomerName
                 MI.CC = "casemail@microsoft.com"
 
@@ -1353,10 +1353,10 @@ Public Class Form1
         Try
             Dim pth As String ' for .eml added on 18th march
             If TV.SelectedNode.Text.EndsWith("<External>") Then
-                pth = common.TemplateRoot & "\" & TV.SelectedNode.Parent.Name.ToString & "\" & TV.SelectedNode.Text
+                pth = Common.TemplateRoot & "\" & TV.SelectedNode.Parent.Name.ToString & "\" & TV.SelectedNode.Text
                 pth = pth.Substring(0, pth.LastIndexOf("<External>")) & ".msg"
             Else
-                pth = common.TemplateRoot & "\" & TV.SelectedNode.Parent.Name.ToString & "\" & TV.SelectedNode.Text & ".txt"
+                pth = Common.TemplateRoot & "\" & TV.SelectedNode.Parent.Name.ToString & "\" & TV.SelectedNode.Text & ".txt"
             End If
 
             If TV.SelectedNode.Level = 1 Then
@@ -1387,10 +1387,10 @@ Public Class Form1
     Private Sub Button2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnTeamShare.Click
         Try
             Cursor.Current = Cursors.WaitCursor
-            If common.IsCaseNo(common.CaseNo.Trim) = False Then
-                Process.Start(common.DSDBshare)
+            If common.IsCaseNo(Common.CaseNo.Trim) = False Then
+                Process.Start(Common.DSDBshare)
             Else
-                Process.Start(common.DSDBshare & "\" & common.CaseNo)
+                Process.Start(Common.DSDBshare & "\" & Common.CaseNo)
             End If
             Cursor.Current = Cursors.Default
         Catch ex As Exception
@@ -1545,8 +1545,8 @@ Public Class Form1
 
             DGLocal.DataSource = DTLocal
             DGRemote.DataSource = DTRemote
-            DGCF.DataSource = DTCF
-            DGFTP.DataSource = DTFTP
+            'DGCF.DataSource = DTCF
+            'DGFTP.DataSource = DTFTP
 
             '=========================================================
 
@@ -1555,14 +1555,14 @@ Public Class Form1
             'TimerTabTime.Enabled = False
             Timer1.Enabled = False ' to fix a bug where when we open a case over a orphan  note after 1 minute idealness it creates duplicate tab
             Chkwordwrap.Checked = True
-            If common.IsCaseNo(common.CaseNo) Then
+            If common.IsCaseNo(Common.CaseNo) Then
                 Cursor.Current = Cursors.WaitCursor
 
                 '===========for copy progress bar
-                common.PBPS = True
-                common.PBLS = True
-                common.PBCF = True
-                common.PBFTP = True
+                Common.PBPS = True
+                Common.PBLS = True
+                Common.PBCF = True
+                Common.PBFTP = True
                 '===============================
 
                 If common.IsMSSolveCase = True Then
@@ -1586,25 +1586,25 @@ Public Class Form1
                         Next
                     End If
                 End If
-                If Directory.Exists(common.NotesRoot & "\" & lblCaseno.Text.Trim & "\" & "AllNotes") = False Then
-                    My.Computer.FileSystem.CreateDirectory(common.NotesRoot & "\" & lblCaseno.Text.Trim & "\" & "AllNotes")
-                    common.SetCaseAttribute("CustomerName", common.CustomerName, lblCaseno.Text.Trim)
+                If Directory.Exists(Common.NotesRoot & "\" & lblCaseno.Text.Trim & "\" & "AllNotes") = False Then
+                    My.Computer.FileSystem.CreateDirectory(Common.NotesRoot & "\" & lblCaseno.Text.Trim & "\" & "AllNotes")
+                    common.SetCaseAttribute("CustomerName", Common.CustomerName, lblCaseno.Text.Trim)
                     'My.Computer.FileSystem.WriteAllText(common.NotesRoot & "\" & lblCaseno.Text.Trim & "\Info.txt", common.CustomerName, False)
                 Else
                     '-------------------------------------
 
-                    If common.CustomerName.Trim <> "" Then common.SetCaseAttribute("CustomerName", common.CustomerName, lblCaseno.Text.Trim) 'My.Computer.FileSystem.WriteAllText(common.NotesRoot & "\" & lblCaseno.Text.Trim & "\Info.txt", common.CustomerName, False)
+                    If Common.CustomerName.Trim <> "" Then common.SetCaseAttribute("CustomerName", Common.CustomerName, lblCaseno.Text.Trim) 'My.Computer.FileSystem.WriteAllText(common.NotesRoot & "\" & lblCaseno.Text.Trim & "\Info.txt", common.CustomerName, False)
 
                     'If MsgBox("This seems to be an old case. You probably already have some case notes for this case. Click on 'Yes' to load the previous saved case notes in tabs or Go to Open > Local Case directory or Open > Local Case notes to check the case history.", MsgBoxStyle.YesNo + MsgBoxStyle.Question) = MsgBoxResult.Yes Then
                     Dim fl As FileInfo
-                    Dim Dr As New DirectoryInfo(common.NotesRoot & "\" & common.CaseNo & "\AllNotes")
+                    Dim Dr As New DirectoryInfo(Common.NotesRoot & "\" & Common.CaseNo & "\AllNotes")
                     'for progress bar
                     'Dim fc As Integer
                     'For Each fl In Dr.GetFiles
                     '    fc = fc + 1
                     'Next
 
-                    If common.DonotLoadPreviousNotes = False Then
+                    If Common.DonotLoadPreviousNotes = False Then
 
                         '=====Creating datatable
                         Dim DT As New DataTable
@@ -1652,8 +1652,8 @@ Public Class Form1
 
                 End If
 
-                lbllocal.Text = common.NotesRoot & "\" & common.CaseNo
-                lblremote.Text = common.DSDBshare & "\" & common.CaseNo
+                lbllocal.Text = Common.NotesRoot & "\" & Common.CaseNo
+                lblremote.Text = Common.DSDBshare & "\" & Common.CaseNo
                 'If common.IsMSSolveCase = True Then
                 '    LblCF.Enabled = True
                 '    BtnOpenCF.Enabled = True
@@ -1664,13 +1664,13 @@ Public Class Form1
                 '    LblCF.Text = ""
                 'End If
 
-                LblCF.Text = ""
+                'LblCF.Text = ""
                 CFLocation = ""
-                LblFTP.Text = ""
+                'LblFTP.Text = ""
                 FTPLocation = ""
 
                 '------Writing log with case no------
-                common.ExtraDataToLog = "Case Opened - " & common.CaseNo
+                Common.ExtraDataToLog = "Case Opened - " & Common.CaseNo
                 Dim WL As New Threading.Thread(AddressOf common.WriteLog)
                 WL.Start()
                 '------------------------------------
@@ -1712,12 +1712,12 @@ Public Class Form1
 
     Private Sub DeleteThisNoteToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles DeleteThisNoteToolStripMenuItem.Click
         Try
-            If common.IsCaseNo(common.CaseNo) = False Then
+            If common.IsCaseNo(Common.CaseNo) = False Then
                 MsgBox("Notes Can't be saved or deleted without Case number.", MsgBoxStyle.Information)
             Else
 
                 If MsgBox("This note will be deleted parmanently. Are you sure ?", MsgBoxStyle.Question & MsgBoxStyle.YesNo) = MsgBoxResult.Yes Then
-                    File.Delete(common.NotesRoot & "\" & common.CaseNo & "\" & "AllNotes" & "\" & TC.SelectedTab.Tag & ".txt")
+                    File.Delete(Common.NotesRoot & "\" & Common.CaseNo & "\" & "AllNotes" & "\" & TC.SelectedTab.Tag & ".txt")
                     TC.SelectedTab.Dispose()
                 End If
 
@@ -1807,7 +1807,7 @@ Public Class Form1
             If e.Data.GetDataPresent(DataFormats.FileDrop) Then
                 f = e.Data.GetData(DataFormats.FileDrop)
 
-                If common.IsCaseNo(common.CaseNo.Trim) = False Then
+                If common.IsCaseNo(Common.CaseNo.Trim) = False Then
                     MsgBox("Please specify a valid case no.", MsgBoxStyle.Information)
                     Exit Sub
                 Else
@@ -1816,20 +1816,20 @@ Public Class Form1
                         cr.TxtCopyFrom.Text = f(i)
                         If Wheretocopy = 1 Then
                             cr.ChkCopyDSDB.Checked = False
-                            cr.ChkCopyCF.Checked = False
+                            'cr.ChkCopyCF.Checked = False
                             cr.ChkCopyLocalShare.Checked = True
                         ElseIf Wheretocopy = 2 Then
                             cr.ChkCopyDSDB.Checked = True
                             cr.ChkCopyLocalShare.Checked = False
-                            cr.ChkCopyCF.Checked = False
+                            'cr.ChkCopyCF.Checked = False
                         ElseIf Wheretocopy = 3 Then
                             cr.ChkCopyDSDB.Checked = False
                             cr.ChkCopyLocalShare.Checked = False
-                            cr.ChkCopyCF.Checked = True
+                            'cr.ChkCopyCF.Checked = True
                         ElseIf Wheretocopy = 4 Then
                             cr.ChkCopyDSDB.Checked = True
                             cr.ChkCopyLocalShare.Checked = True
-                            cr.ChkCopyCF.Checked = True
+                            'cr.ChkCopyCF.Checked = True
                         End If
 
                         cr.ShowDialog()
@@ -1837,7 +1837,7 @@ Public Class Form1
                 End If
 
                 '------Writing log ------------------
-                common.ExtraDataToLog = "Draged and dropped to copy with option " & Wheretocopy
+                Common.ExtraDataToLog = "Draged and dropped to copy with option " & Wheretocopy
                 Dim WL As New Threading.Thread(AddressOf common.WriteLog)
                 WL.Start()
                 '------------------------------------
@@ -1876,11 +1876,11 @@ Public Class Form1
         EventDragEnter(e)
     End Sub
 
-    Private Sub DGCF_DragDrop(ByVal sender As Object, ByVal e As System.Windows.Forms.DragEventArgs) Handles DGCF.DragDrop
+    Private Sub DGCF_DragDrop(ByVal sender As Object, ByVal e As System.Windows.Forms.DragEventArgs)
         EventDragDrop(e, 3)
     End Sub
 
-    Private Sub DGCF_DragEnter(ByVal sender As Object, ByVal e As System.Windows.Forms.DragEventArgs) Handles DGCF.DragEnter
+    Private Sub DGCF_DragEnter(ByVal sender As Object, ByVal e As System.Windows.Forms.DragEventArgs)
         EventDragEnter(e)
     End Sub
 
@@ -1962,12 +1962,12 @@ Public Class Form1
 
     Private Sub BtnAlert_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnAlert.Click
         Try
-            If common.IsCaseNo(common.CaseNo.Trim) = False Then
+            If common.IsCaseNo(Common.CaseNo.Trim) = False Then
                 Dim Alert As New Alert
                 Alert.ShowDialog()
             Else
                 Dim Alert As New Alert
-                Alert.TxtCaseno.Text = common.CaseNo
+                Alert.TxtCaseno.Text = Common.CaseNo
                 Alert.Show()
             End If
 
@@ -1984,7 +1984,7 @@ Public Class Form1
                     '------Writing log ------------------
                     Dim l As String = "Reminder removed - " & DGAlert.SelectedRows(0).ToString
                     l = l.Replace(vbCrLf, " ")
-                    common.ExtraDataToLog = l
+                    Common.ExtraDataToLog = l
                     Dim WL As New Threading.Thread(AddressOf common.WriteLog)
                     WL.Start()
                     '------------------------------------
@@ -2003,7 +2003,7 @@ Public Class Form1
 
     Private Sub DGAlert_CellContentDoubleClick(ByVal sender As Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles DGAlert.CellContentDoubleClick
         Try
-            common.OverRideCaseNo = DGAlert.SelectedRows(0).Cells(1).Value  'DSAlert.Tables(0).Rows(DGAlert.SelectedRows(0).Index).Item(0).ToString
+            Common.OverRideCaseNo = DGAlert.SelectedRows(0).Cells(1).Value  'DSAlert.Tables(0).Rows(DGAlert.SelectedRows(0).Index).Item(0).ToString
             BtnNew_Click(sender, e)
         Catch ex As Exception
             MsgBox(ex.Message, MsgBoxStyle.Exclamation)
@@ -2110,7 +2110,7 @@ Public Class Form1
 
     Private Sub BtnDeleteCase_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnDeleteCase.Click
         Try
-            If common.IsCaseNo(common.CaseNo.Trim) = False Then
+            If common.IsCaseNo(Common.CaseNo.Trim) = False Then
                 MsgBox("Please specify a valid case no.", MsgBoxStyle.Information)
                 Exit Sub
             Else
@@ -2118,7 +2118,7 @@ Public Class Form1
                 DC.Show()
 
                 '------Writing log ------------------
-                common.ExtraDataToLog = "Case Resources deleted - " & common.CaseNo
+                Common.ExtraDataToLog = "Case Resources deleted - " & Common.CaseNo
                 Dim WL As New Threading.Thread(AddressOf common.WriteLog)
                 WL.Start()
                 '------------------------------------
@@ -2166,18 +2166,18 @@ Public Class Form1
             Dim cr As New CopyResource
 
             If CType(TBFile.SelectedTab.Controls(3), DataGridView).Name = "DGLocal" Then
-                cr.ChkCopyCF.Checked = True
+                'cr.ChkCopyCF.Checked = True
                 cr.ChkCopyDSDB.Checked = True
                 cr.ChkCopyLocalShare.Checked = False
                 cr.ChkCopyLocalShare.Enabled = False
             ElseIf CType(TBFile.SelectedTab.Controls(3), DataGridView).Name = "DGRemote" Then
-                cr.ChkCopyCF.Checked = True
+                'cr.ChkCopyCF.Checked = True
                 cr.ChkCopyDSDB.Checked = False
                 cr.ChkCopyDSDB.Enabled = False
                 cr.ChkCopyLocalShare.Checked = True
             ElseIf CType(TBFile.SelectedTab.Controls(3), DataGridView).Name = "DGCF" Then
-                cr.ChkCopyCF.Checked = False
-                cr.ChkCopyCF.Enabled = False
+                'cr.ChkCopyCF.Checked = False
+                'cr.ChkCopyCF.Enabled = False
                 cr.ChkCopyDSDB.Checked = True
                 cr.ChkCopyLocalShare.Checked = True
             End If
@@ -2202,16 +2202,16 @@ Public Class Form1
 
                 'for progress bar==================
                 If TBFile.SelectedTab.Name = "TPTeam" Then
-                    common.PBPS = True
+                    Common.PBPS = True
                 ElseIf TBFile.SelectedTab.Name = "TPLocal" Then
-                    common.PBLS = True
+                    Common.PBLS = True
                 ElseIf TBFile.SelectedTab.Name = "TPCF" Then
-                    common.PBCF = True
+                    Common.PBCF = True
                 End If
                 '======================================
 
                 File.Delete(CType(TBFile.SelectedTab.Controls(3), DataGridView).SelectedRows(0).Cells(1).Value.ToString)
-                common.CollectFileList = True
+                Common.CollectFileList = True
             End If
         Catch ex As Exception
             If ex.Message.Trim.StartsWith("Index was out of range") = False Then
@@ -2249,7 +2249,7 @@ Public Class Form1
             End If
 
             If TV.SelectedNode.Level = 1 Then
-                My.Computer.Clipboard.SetData(System.Windows.Forms.DataFormats.Text, File.ReadAllText(common.TemplateRoot & "\" & TV.SelectedNode.Parent.Name.ToString & "\" & TV.SelectedNode.Text & ".txt")) 'CType(TC.SelectedTab.Controls(0), RichTextBox).Rtf)
+                My.Computer.Clipboard.SetData(System.Windows.Forms.DataFormats.Text, File.ReadAllText(Common.TemplateRoot & "\" & TV.SelectedNode.Parent.Name.ToString & "\" & TV.SelectedNode.Text & ".txt")) 'CType(TC.SelectedTab.Controls(0), RichTextBox).Rtf)
             Else
                 MsgBox("Please select a template to Copy.", MsgBoxStyle.Information)
             End If
@@ -2266,7 +2266,7 @@ Public Class Form1
 
                 Dim pth As String ' added for .eml date 18th march 2014
                 If TV.SelectedNode.Text.EndsWith("<External>") Then
-                    pth = common.TemplateRoot & "\" & TV.SelectedNode.Parent.Name.ToString & "\" & TV.SelectedNode.Text
+                    pth = Common.TemplateRoot & "\" & TV.SelectedNode.Parent.Name.ToString & "\" & TV.SelectedNode.Text
                     pth = pth.Substring(0, pth.LastIndexOf("<External>")) & ".msg"
                     Process.Start(pth)
                     Exit Sub
@@ -2276,10 +2276,10 @@ Public Class Form1
                 Threading.Thread.Sleep(1000)
                 OpenMail()
 
-               
+
 
                 Try
-                    File.Delete(common.NotesRoot & "\" & common.CaseNo & "\" & "AllNotes" & "\" & TC.SelectedTab.Tag & ".txt")
+                    File.Delete(Common.NotesRoot & "\" & Common.CaseNo & "\" & "AllNotes" & "\" & TC.SelectedTab.Tag & ".txt")
 
                 Catch ex As Exception
                     If ex.Message.ToString.StartsWith("Could not find a part of the path") = False And ex.Message.ToString.StartsWith("Object reference not set to an instance of an object") = False Then
@@ -2293,7 +2293,7 @@ Public Class Form1
                 MsgBox("Please select a template to mail.", MsgBoxStyle.Information)
             End If
 
-            
+
         Catch ex As Exception
             ' If ex.Message <> "Object reference not set to an instance of an object." Then
             MsgBox(ex.Message, MsgBoxStyle.Exclamation)
@@ -2328,23 +2328,23 @@ Public Class Form1
     End Sub
 
 
-   
-    Private Sub BtnOpenCF_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnOpenCF.Click
-        Try
-            Cursor.Current = Cursors.WaitCursor
-            If common.IsCaseNo(common.CaseNo.Trim) = True Then
-                If LblCF.Text.Trim <> "" Then
-                    Process.Start(LblCF.Text.Trim)
-                End If
 
-            End If
-            Cursor.Current = Cursors.Default
-        Catch ex As Exception
-            MsgBox(ex.Message, MsgBoxStyle.Exclamation)
-        Finally
-            Cursor.Current = Cursors.Default
-        End Try
-    End Sub
+    'Private Sub BtnOpenCF_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
+    '    'Try
+    '    '    Cursor.Current = Cursors.WaitCursor
+    '    '    If common.IsCaseNo(Common.CaseNo.Trim) = True Then
+    '    '        If LblCF.Text.Trim <> "" Then
+    '    '            Process.Start(LblCF.Text.Trim)
+    '    '        End If
+
+    '    '    End If
+    '    '    Cursor.Current = Cursors.Default
+    '    'Catch ex As Exception
+    '    '    MsgBox(ex.Message, MsgBoxStyle.Exclamation)
+    '    'Finally
+    '    '    Cursor.Current = Cursors.Default
+    '    'End Try
+    'End Sub
 
 
     Private Sub ManageCaseToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ManageCaseToolStripMenuItem.Click

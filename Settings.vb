@@ -1,6 +1,4 @@
-﻿Imports System.IO
-Imports System.Data
-Imports System.Drawing.Text
+﻿Imports System.Drawing.Text
 
 Public Class Settings
 
@@ -306,8 +304,6 @@ Public Class Settings
                 End If
             Next
 
-
-
             '===========loading font size
 
             For i = 8 To 30
@@ -315,7 +311,6 @@ Public Class Settings
             Next
             CBFontSize.SelectedIndex = 4
             '=================================
-
 
             If My.Computer.FileSystem.FileExists("Easynotes.Config") Then
                 Dim DS As New DataSet
@@ -429,8 +424,6 @@ Public Class Settings
         End Try
     End Sub
 
-
-
     Private Sub SetSampleText()
         Try
             RTBSample.Font = New System.Drawing.Font(CBFont.SelectedItem.ToString, CBFontSize.SelectedItem.ToString, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -444,9 +437,6 @@ Public Class Settings
         End Try
     End Sub
 
-
-
-  
     Private Sub CBFont_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CBFont.SelectedIndexChanged
         Try
             SetSampleText()
@@ -479,7 +469,4 @@ Public Class Settings
         End Try
     End Sub
 
-    Private Sub TxtLst_TextChanged(sender As Object, e As EventArgs) Handles TxtLst.TextChanged
-
-    End Sub
 End Class

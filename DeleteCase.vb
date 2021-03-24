@@ -53,32 +53,32 @@ Public Class DeleteCase
                     MsgBox(ex.Message, MsgBoxStyle.Exclamation)
                 End Try
 
-                If ChkPublic.Checked = True Or ChkCF.Checked = True Then
+                If ChkPublic.Checked = True Then
                     If MsgBox("Are you sure you want to delete shared resources." & vbCrLf & vbCrLf & "If you click on 'Yes' the shared resources will be deleted and no other engineer will be able to access them." & vbCrLf & vbCrLf & "If you click on 'Cancel', only local resource will be deleted.", MsgBoxStyle.Critical + MsgBoxStyle.OkCancel + MsgBoxStyle.SystemModal) = MsgBoxResult.Ok Then
                         '------------deleting DSDB case folder--------------------
                         Try
                             If ChkPublic.Checked = True Then
-                                If Directory.Exists(common.DSDBshare & "\" & common.CaseNo) Then
-                                    Directory.Delete(common.DSDBshare & "\" & common.CaseNo, True)
+                                If Directory.Exists(Common.DSDBshare & "\" & Common.CaseNo) Then
+                                    Directory.Delete(Common.DSDBshare & "\" & Common.CaseNo, True)
                                 End If
                             End If
                         Catch ex As Exception
                             MsgBox(ex.Message, MsgBoxStyle.Exclamation)
                         End Try
                         '------------deleting MSSolve customer file case folder--------------------
-                        Try
-                            If ChkCF.Checked = True Then
-                                Dim s As String = Form1.LblFTP.Text.Trim 'common.getCustomerFilePath
-                                If s.Trim <> "" Then
-                                    If Directory.Exists(s) Then
-                                        Directory.Delete(s, True)
-                                    End If
-                                End If
-                                
-                            End If
-                        Catch ex As Exception
-                            MsgBox(ex.Message, MsgBoxStyle.Exclamation)
-                        End Try
+                        'Try
+                        '    If ChkCF.Checked = True Then
+                        '        Dim s As String = Form1.LblFTP.Text.Trim 'common.getCustomerFilePath
+                        '        If s.Trim <> "" Then
+                        '            If Directory.Exists(s) Then
+                        '                Directory.Delete(s, True)
+                        '            End If
+                        '        End If
+
+                        '    End If
+                        'Catch ex As Exception
+                        '    MsgBox(ex.Message, MsgBoxStyle.Exclamation)
+                        'End Try
                     End If
                 End If
 
