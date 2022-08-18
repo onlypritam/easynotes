@@ -24,7 +24,7 @@ Public Class Common
     Public Shared BackColor As String = "White"
     Public Shared FontSize As String = "11"
     Public Shared OverRideCaseNo As String = "" ' to stop the caseno form to search for open mssolve and clarify cases
-    Public Shared ReadOnly Version As String = "5.2"
+    Public Shared ReadOnly Version As String = "5.3"
     Public Shared CollectFileList As Boolean = False  ' to intimate when to collect file list
     Public Shared EntersBeforePaste As Integer = 0 ' to find out how many time you pressed enter after before paste
     Public Shared ExtraDataToLog As String = "<Null>"
@@ -72,9 +72,7 @@ Public Class Common
                 If Regex.IsMatch(Left(caseno, 3), "^[a-zA-Z]*$") = True And caseno.Substring(15, 1) = "-" And IsNumeric(caseno.Substring(16, 1)) And Regex.IsMatch(caseno.Substring(3, 12), "^[0-9]*$") = True Then
                     Return True
                 End If
-            ElseIf caseno.Length = 15 And Regex.IsMatch(caseno, "^[0-9]*$") = True Then
-                Return True
-            ElseIf caseno.Length = 18 And Regex.IsMatch(caseno, "^[0-9]*$") = True Then
+            ElseIf caseno.Length >= 15 And caseno.Length <= 25 And Regex.IsMatch(caseno, "^[0-9]*$") = True Then
                 Return True
             Else : Return False
 
@@ -201,6 +199,18 @@ Public Class Common
                     Dim sr As Integer = p.MainWindowTitle.LastIndexOf("-")
                     If i = 1 Then
                         Return p.MainWindowTitle.Substring(0, sr - 1).Trim ' caseno
+                        Exit Function
+                    End If
+                ElseIf p.MainWindowTitle.StartsWith("Add Case Note to") Then
+
+                    Dim sr As Integer = p.MainWindowTitle.LastIndexOf("to")
+                    Dim sr2 As Integer = p.MainWindowTitle.LastIndexOf("(")
+                    Dim sr3 As Integer = p.MainWindowTitle.LastIndexOf(")")
+                    If i = 1 Then
+                        Return p.MainWindowTitle.Substring(sr + 2, sr2 - sr - 2).Trim ' caseno
+                        Exit Function
+                    ElseIf i = 2 Then
+                        Return p.MainWindowTitle.Substring(sr2 + 1, sr3 - sr2 - 1) ' name
                         Exit Function
                     End If
                 End If
@@ -395,7 +405,7 @@ Public Class Common
             Dim MI As Outlook.MailItem = OApp.CreateItem(Outlook.OlItemType.olMailItem)
 
 
-            MI.To = "Snehach@Microsoft.com"
+            MI.To = "Snchowdh@Microsoft.com"
             MI.Subject = "Easy Notes Feedback - " & Common.Version
             MI.CC = "Snehach@Live.com"
             MI.Display()

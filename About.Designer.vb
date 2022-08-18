@@ -33,13 +33,13 @@ Partial Class About
         'TextBoxDescription
         '
         Me.TextBoxDescription.BackColor = System.Drawing.Color.White
-        Me.TextBoxDescription.Location = New System.Drawing.Point(15, 54)
-        Me.TextBoxDescription.Margin = New System.Windows.Forms.Padding(6, 3, 3, 3)
+        Me.TextBoxDescription.Location = New System.Drawing.Point(23, 68)
+        Me.TextBoxDescription.Margin = New System.Windows.Forms.Padding(9, 5, 4, 5)
         Me.TextBoxDescription.Multiline = True
         Me.TextBoxDescription.Name = "TextBoxDescription"
         Me.TextBoxDescription.ReadOnly = True
         Me.TextBoxDescription.ScrollBars = System.Windows.Forms.ScrollBars.Both
-        Me.TextBoxDescription.Size = New System.Drawing.Size(548, 216)
+        Me.TextBoxDescription.Size = New System.Drawing.Size(820, 330)
         Me.TextBoxDescription.TabIndex = 1
         Me.TextBoxDescription.TabStop = False
         Me.TextBoxDescription.Text = resources.GetString("TextBoxDescription.Text")
@@ -47,11 +47,11 @@ Partial Class About
         'LabelVersion
         '
         Me.LabelVersion.BackColor = System.Drawing.Color.FromArgb(CType(CType(102, Byte), Integer), CType(CType(158, Byte), Integer), CType(CType(221, Byte), Integer))
-        Me.LabelVersion.Location = New System.Drawing.Point(151, 170)
-        Me.LabelVersion.Margin = New System.Windows.Forms.Padding(6, 0, 3, 0)
-        Me.LabelVersion.MaximumSize = New System.Drawing.Size(0, 17)
+        Me.LabelVersion.Location = New System.Drawing.Point(226, 262)
+        Me.LabelVersion.Margin = New System.Windows.Forms.Padding(9, 0, 4, 0)
+        Me.LabelVersion.MaximumSize = New System.Drawing.Size(0, 26)
         Me.LabelVersion.Name = "LabelVersion"
-        Me.LabelVersion.Size = New System.Drawing.Size(0, 17)
+        Me.LabelVersion.Size = New System.Drawing.Size(0, 26)
         Me.LabelVersion.TabIndex = 5
         Me.LabelVersion.Text = "Version - 1.0"
         Me.LabelVersion.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -59,11 +59,11 @@ Partial Class About
         'LabelCopyright
         '
         Me.LabelCopyright.BackColor = System.Drawing.Color.FromArgb(CType(CType(102, Byte), Integer), CType(CType(158, Byte), Integer), CType(CType(221, Byte), Integer))
-        Me.LabelCopyright.Location = New System.Drawing.Point(151, 153)
-        Me.LabelCopyright.Margin = New System.Windows.Forms.Padding(6, 0, 3, 0)
-        Me.LabelCopyright.MaximumSize = New System.Drawing.Size(0, 17)
+        Me.LabelCopyright.Location = New System.Drawing.Point(226, 235)
+        Me.LabelCopyright.Margin = New System.Windows.Forms.Padding(9, 0, 4, 0)
+        Me.LabelCopyright.MaximumSize = New System.Drawing.Size(0, 26)
         Me.LabelCopyright.Name = "LabelCopyright"
-        Me.LabelCopyright.Size = New System.Drawing.Size(0, 17)
+        Me.LabelCopyright.Size = New System.Drawing.Size(0, 26)
         Me.LabelCopyright.TabIndex = 2
         Me.LabelCopyright.Text = "Copyright - Copyright © Microsoft 2007"
         Me.LabelCopyright.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -73,9 +73,10 @@ Partial Class About
         Me.OKButton.BackColor = System.Drawing.SystemColors.Control
         Me.OKButton.DialogResult = System.Windows.Forms.DialogResult.Cancel
         Me.OKButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.OKButton.Location = New System.Drawing.Point(482, 276)
+        Me.OKButton.Location = New System.Drawing.Point(723, 425)
+        Me.OKButton.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.OKButton.Name = "OKButton"
-        Me.OKButton.Size = New System.Drawing.Size(81, 23)
+        Me.OKButton.Size = New System.Drawing.Size(122, 35)
         Me.OKButton.TabIndex = 6
         Me.OKButton.Text = "&OK"
         Me.OKButton.UseVisualStyleBackColor = False
@@ -83,21 +84,22 @@ Partial Class About
         'About
         '
         Me.AcceptButton = Me.OKButton
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.ClientSize = New System.Drawing.Size(575, 311)
+        Me.ClientSize = New System.Drawing.Size(862, 478)
         Me.Controls.Add(Me.OKButton)
         Me.Controls.Add(Me.LabelVersion)
         Me.Controls.Add(Me.LabelCopyright)
         Me.Controls.Add(Me.TextBoxDescription)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "About"
-        Me.Padding = New System.Windows.Forms.Padding(9)
+        Me.Padding = New System.Windows.Forms.Padding(14, 14, 14, 14)
         Me.ShowInTaskbar = False
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
         Me.Text = "About"

@@ -77,7 +77,7 @@ Public Class CleanOldCases
             End If
 
         ElseIf e.ColumnIndex = 0 Then
-            Process.Start("mssv://sr/?" & DG.Rows(e.RowIndex).Cells(3).Value)
+            Process.Start("https://onesupport.crm.dynamics.com/main.aspx?appid=101acb62-8d00-eb11-a813-000d3a8b3117&pagetype=search&searchText=" & DG.Rows(e.RowIndex).Cells(3).Value)
 
         ElseIf e.ColumnIndex = 1 Then
             common.OverRideCaseNo = DG.Rows(e.RowIndex).Cells(3).Value

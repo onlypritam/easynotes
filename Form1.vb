@@ -1565,11 +1565,12 @@ Public Class Form1
                 Common.PBFTP = True
                 '===============================
 
-                If common.IsMSSolveCase = True Then
-                    BtnMSSolve.Enabled = True
-                Else
-                    BtnMSSolve.Enabled = False
-                End If
+                BtnMSSolve.Enabled = True
+                'If common.IsMSSolveCase = True Then
+                '    BtnMSSolve.Enabled = True
+                'Else
+                '    BtnMSSolve.Enabled = False
+                'End If
 
                 If IsFirstCase = False Then
                     Dim tp As TabPage
@@ -1954,7 +1955,9 @@ Public Class Form1
             WL.Start()
             '------------------------------------
 
-            Process.Start("https://servicedesk.microsoft.com/#/customer/cases?caseNumber=" & lblCaseno.Text.Trim)
+            'Process.Start("https://servicedesk.microsoft.com/#/customer/cases?caseNumber=" & lblCaseno.Text.Trim)
+            Process.Start("https://onesupport.crm.dynamics.com/main.aspx?appid=101acb62-8d00-eb11-a813-000d3a8b3117&pagetype=search&searchText=" & lblCaseno.Text.Trim)
+
         Catch ex As Exception
             MsgBox(ex.Message, MsgBoxStyle.Exclamation)
         End Try
